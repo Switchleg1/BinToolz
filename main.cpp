@@ -205,6 +205,8 @@ unsigned int getChecksum(unsigned int data_len, unsigned char* data_in)
 void __fastcall TMainForm::ConvertButtonClick(TObject *Sender)
 {
 	StatusBar->Panels->Items[0]->Text = "";
+	OpenDialog->DefaultExt = ".bin";
+	OpenDialog->Filter = "Bin|*.bin";
 	OpenDialog->Title = "Open Ghidra export";
 	if(OpenDialog->Execute()) {
 		AnsiString	fileInName = OpenDialog->FileName;
@@ -562,6 +564,8 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 void __fastcall TMainForm::SwapButtonClick(TObject *Sender)
 {
 	StatusBar->Panels->Items[0]->Text = "";
+	OpenDialog->DefaultExt = ".bin";
+	OpenDialog->Filter = "Bin|*.bin";
 	OpenDialog->Title = "Open ASW Bin";
 	if(OpenDialog->Execute()) {
 		AnsiString	fileInName = OpenDialog->FileName;
