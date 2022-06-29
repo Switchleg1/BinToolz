@@ -12,6 +12,7 @@ TMainForm *MainForm;
 //---------------------------------------------------------------------------
 #define HW_COUNT		2
 #define BTP_VERSION		"BinToolz Patch v1.1"
+#define MAX_BINSIZE     4194304
 
 typedef unsigned int	uint32_t;
 typedef unsigned short	uint16_t;
@@ -93,11 +94,11 @@ __fastcall TMainForm::TMainForm(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
-hardware_t* getHardwareType(uint32_t fSize)
+hardware_t* getHardwareType(uint32_t iSize)
 {
 	//determine simos version
 	for(uint32_t i=0; i<HW_COUNT; i++) {
-		if(fSize == simosHW[i].ghidra_size) {
+		if(iSize == simosHW[i].ghidra_size) {
 			return &simosHW[i];
 		}
 	}
@@ -105,15 +106,23 @@ hardware_t* getHardwareType(uint32_t fSize)
 	return NULL;
 }
 //---------------------------------------------------------------------------
-hardware_t* getHardwareType(uint8_t* fData)
+hardware_t* getHardwareType(uint8_t* fData, uint32_t iSize)
 {
-	//determine simos version
-	for(uint32_t i=0; i<HW_COUNT; i++) {
-		int8_t box_code[12];
-		memset(box_code, 0, 12);
-		memcpy(box_code, &fData[simosHW[i].box_code_start], 11);
-		if(AnsiString(box_code).Length() != 0)
-			return &simosHW[i];
+	if(iSize == MAX_BINSIZE) {
+		//determine simos version
+		for(uint32_t i=0; i<HW_COUNT; i++) {
+			int8_t box_code[12];
+			memset(box_code, 0, 12);
+			memcpy(box_code, &fData[simosHW[i].box_code_start], 11);
+			if(AnsiString(box_code).Length() != 0)
+				return &simosHW[i];
+		}
+	} else {
+		for(uint32_t i=0; i<HW_COUNT; i++) {
+			if(iSize == simosHW[i].blocks[4].length) {
+				return &simosHW[i];
+			}
+		}
 	}
 
 	return NULL;
@@ -122,21 +131,33 @@ hardware_t* getHardwareType(uint8_t* fData)
 void getSoftcode(hardware_t* hw, uint8_t* fData, uint8_t* code)
 {
 	memset(code, 0, 9);
-	memcpy(code, &fData[hw->soft_code_start], 8);
+
+	if(hw) {
+		memcpy(code, &fData[hw->soft_code_start], 8);
+	}
 }
 //---------------------------------------------------------------------------
 void getBoxcode(hardware_t* hw, uint8_t* fData, uint8_t* code)
 {
 	memset(code, 0, 12);
-	memcpy(code, &fData[hw->box_code_start], 11);
+
+	if(hw) {
+		memcpy(code, &fData[hw->box_code_start], 11);
+	}
 }
 //---------------------------------------------------------------------------
-int8_t verifyBoxCodes(uint8_t* fData1, uint8_t* fData2)
+int8_t verifyBoxCodes(uint8_t* fData1, uint8_t* fData2, uint32_t iSize2)
 {
-	hardware_t* hw = getHardwareType(fData1);
+	hardware_t* hw = getHardwareType(fData1, MAX_BINSIZE);
 
-	if(hw != getHardwareType(fData2))
+	if(hw != getHardwareType(fData2, iSize2)) {
 		return -1;
+	}
+
+	uint32_t iOffset2 = 0;
+	if(iSize2 == hw->blocks[4].length) {
+		iOffset2 = hw->blocks[4].bin_pos;
+	}
 
 	uint8_t box_code1[12];
 	memset(box_code1, 0, 12);
@@ -144,7 +165,7 @@ int8_t verifyBoxCodes(uint8_t* fData1, uint8_t* fData2)
 
 	uint8_t box_code2[12];
 	memset(box_code2, 0, 12);
-	memcpy(box_code2, &fData2[hw->box_code_start], 11);
+	memcpy(box_code2, &fData2[hw->box_code_start-iOffset2], 11);
 
 	if(strcmp(box_code1, box_code2))
 		return -2;
@@ -194,127 +215,175 @@ bool setPatchBlock(uint32_t data_len, uint8_t* data_in, uint8_t* data_block, boo
 	return true;
 }
 //---------------------------------------------------------------------------
+uint8_t* loadFile(char* name, uint32_t max_size, uint32_t* size, int8_t* result)
+{
+	FILE* file = fopen(name, "rb");
+	if(file == NULL) {
+		*result = -1;
+		return NULL;
+	}
+	fseek(file, 0L, SEEK_END);
+	*size = ftell(file);
+	if(*size > max_size) {
+		*result = -2;
+		fclose(file);
+		return NULL;
+	}
+	rewind(file);
+	uint8_t* data = (uint8_t*)malloc(*size);
+	if(data == NULL) {
+		*result = -3;
+		fclose(file);
+		return NULL;
+	}
+	if(fread(data, sizeof(uint8_t), *size, file) != *size) {
+		*result = -4;
+		fclose(file);
+		free(data);
+		return NULL;
+	}
+	*result = 0;
+	fclose(file);
+
+	return data;
+}
+//---------------------------------------------------------------------------
+void setFileResultStatus(TStatusBar* status, int8_t result, AnsiString fileName)
+{
+	switch(result) {
+	case -1:
+		status->Panels->Items[0]->Text = "Unable to open file ["+fileName+"]";
+		break;
+	case -2:
+		status->Panels->Items[0]->Text = "File too large ["+fileName+"]";
+		break;
+	case -3:
+		status->Panels->Items[0]->Text = "Unable to allocate memory for file ["+fileName+"]";
+		break;
+	case -4:
+		status->Panels->Items[0]->Text = "Unable to read file data ["+fileName+"]";
+		break;
+	}
+}
+//---------------------------------------------------------------------------
 void __fastcall TMainForm::ConvertButtonClick(TObject *Sender)
 {
 	StatusBar->Panels->Items[0]->Text = "";
 	OpenDialog->DefaultExt = ".bin";
 	OpenDialog->Filter = "Bin|*.bin";
 	OpenDialog->Title = "Open Ghidra export";
-	if(OpenDialog->Execute()) {
-		AnsiString	fileInName = OpenDialog->FileName;
-		OpenDialog->Title = "Open CAL replacement";
-		if(!CALCheckBox->Checked || BlockRadioButton->Checked || OpenDialog->Execute()) {
-			AnsiString	fileCALName = OpenDialog->FileName;
-			SaveDialog->DefaultExt = ".bin";
-			SaveDialog->Filter = "Bin|*.bin";
-			if(SaveDialog->Execute()) {
-				//open input bin
-				FILE* fIn = fopen((char*)fileInName.c_str(), "rb");
-				if(fIn == NULL) {
-					StatusBar->Panels->Items[0]->Text = "Unable to open file ["+fileInName+"]";
-					return;
-				}
+	if(!OpenDialog->Execute()) {
+		return;
+	}
+	AnsiString	inFileName = OpenDialog->FileName;
+	OpenDialog->Title = "Open CAL replacement";
 
-				//read input bin
-				BYTE* dataIn = (BYTE*)malloc(simosHW[0].bin_size);
-				uint32_t inSize = fread(dataIn, sizeof(BYTE), simosHW[0].bin_size, fIn);
-				fclose(fIn);
+	if(CALCheckBox->Checked && !BlockRadioButton->Checked && !OpenDialog->Execute()) {
+		return;
+	}
+	AnsiString	fileCALName = OpenDialog->FileName;
+	SaveDialog->DefaultExt = ".bin";
+	SaveDialog->Filter = "Bin|*.bin";
+	if(!SaveDialog->Execute()) {
+		return;
+	}
+	AnsiString	fileOutName = SaveDialog->FileName;
 
-				hardware_t* currentHardware = getHardwareType(inSize);
-				if(currentHardware == NULL) {
-					StatusBar->Panels->Items[0]->Text = "Invalid bin length ["+IntToStr((int)inSize)+"]";
-					free(dataIn);
-					return;
-				}
+	int8_t iResult;
+	uint32_t iInputSize, iCALSize;
+	uint8_t *dInputBin = NULL, *dCALBin = NULL, *dOutBin = NULL;
+	hardware_t*	inHardware;
 
-				AnsiString	fileOutName = SaveDialog->FileName;
-				if(FullRadioButton->Checked) {
-					//write full bin
-					BYTE* dataOut = (BYTE*)malloc(currentHardware->bin_size);
-					memset(dataOut, 0, currentHardware->bin_size);
-					for(int i=0; i<5; i++) {
-						memcpy(&dataOut[currentHardware->blocks[i].bin_pos], &dataIn[currentHardware->blocks[i].ghidra_pos], currentHardware->blocks[i].length);
-					}
-					free(dataIn);
+	//open input bin
+	dInputBin = loadFile((char*)inFileName.c_str(), MAX_BINSIZE, &iInputSize, &iResult);
+	if(iResult) {
+		setFileResultStatus(StatusBar, iResult, inFileName);
+		goto cleanup;
+	}
 
-					//replace cal
-					if(CALCheckBox->Checked) {
-						//open cal bin
-						FILE* fCAL = fopen((char*)fileCALName.c_str(), "rb");
-						if(fIn == NULL) {
-							StatusBar->Panels->Items[0]->Text = "Unable to open file ["+fileInName+"]";
-							free(dataOut);
-							return;
-						}
+	//check simos hw version
+	inHardware = getHardwareType(iInputSize);
+	if(inHardware == NULL) {
+		StatusBar->Panels->Items[0]->Text = "Invalid bin length ["+IntToStr((int)iInputSize)+"]";
+		goto cleanup;
+	}
 
-						//read cal bin
-						BYTE* dataCAL = (BYTE*)malloc(simosHW[0].bin_size);
-						inSize = fread(dataCAL, sizeof(BYTE), simosHW[0].bin_size, fCAL);
-						fclose(fCAL);
+	//creating a full bin?
+	if(FullRadioButton->Checked) {
+		//write full bin
+		dOutBin = (BYTE*)malloc(inHardware->bin_size);
+		memset(dOutBin, 0, inHardware->bin_size);
+		for(int i=0; i<5; i++) {
+			memcpy(&dOutBin[inHardware->blocks[i].bin_pos], &dInputBin[inHardware->blocks[i].ghidra_pos], inHardware->blocks[i].length);
+		}
 
-						bool validBin = false;
-						if(inSize == currentHardware->bin_size) {
-							validBin = true;
-						} else if(inSize == currentHardware->blocks[4].length) {
-							memcpy(&dataCAL[currentHardware->blocks[4].bin_pos], dataCAL, currentHardware->blocks[4].length);
-							validBin = true;
-						}
-
-						if(!validBin || currentHardware != getHardwareType(dataCAL)) {
-							StatusBar->Panels->Items[0]->Text = "Invalid CAL bin type ["+IntToStr((int)inSize)+"]";
-							free(dataOut);
-							free(dataCAL);
-							return;
-						}
-
-						char boxCode = verifyBoxCodes(dataCAL, dataOut);
-						if(boxCode == -2 && ConvertCheckBox->Checked) {
-							StatusBar->Panels->Items[0]->Text = "Boxcodes do not match ["+IntToStr((int)inSize)+"]";
-							free(dataOut);
-							free(dataCAL);
-							return;
-						}
-
-						if(boxCode == -1) {
-							StatusBar->Panels->Items[0]->Text = "Hardware types do not match ["+IntToStr((int)inSize)+"]";
-							free(dataOut);
-							free(dataCAL);
-							return;
-						}
-
-						memcpy(&dataOut[currentHardware->blocks[4].bin_pos], &dataCAL[currentHardware->blocks[4].bin_pos], currentHardware->blocks[4].length);
-						free(dataCAL);
-					}
-
-					//write output bin
-					FILE* fOut = fopen((char*)fileOutName.c_str(), "wb");
-					if(fOut == NULL) {
-						StatusBar->Panels->Items[0]->Text = "Unable to save file ["+fileOutName+"]";
-						free(dataOut);
-						return;
-					}
-					fwrite(dataOut, 1, currentHardware->bin_size, fOut);
-					fclose(fOut);
-					free(dataOut);
-				} else {
-					//separate block bins
-					for(int i=0; i<5; i++) {
-						FILE* fOut = fopen((char*)(fileOutName+IntToStr(i)).c_str(), "wb");
-						if(fOut == NULL) {
-							StatusBar->Panels->Items[0]->Text = "Unable to save file ["+fileOutName+"]";
-							free(dataIn);
-							return;
-						}
-						fwrite(&dataIn[currentHardware->blocks[i].ghidra_pos], 1, currentHardware->blocks[i].length, fOut);
-						fclose(fOut);
-					}
-					free(dataIn);
-				}
-
-				StatusBar->Panels->Items[0]->Text = "Wrote "+AnsiString(currentHardware->name)+" bin ["+fileOutName+"]";
+		//replace cal
+		if(CALCheckBox->Checked) {
+			//open input bin
+			uint32_t iCALOffset = 0;
+			dCALBin = loadFile((char*)fileCALName.c_str(), MAX_BINSIZE, &iCALSize, &iResult);
+			if(iResult) {
+				setFileResultStatus(StatusBar, iResult, fileCALName);
+				goto cleanup;
 			}
+
+			bool validBin = false;
+			if(iCALSize == inHardware->bin_size) {
+				validBin = true;
+				iCALOffset = inHardware->blocks[4].bin_pos;
+			} else if(iCALSize == inHardware->blocks[4].length) {
+				validBin = true;
+			}
+
+			if(!validBin) {
+				StatusBar->Panels->Items[0]->Text = "Invalid CAL bin type ["+IntToStr((int)iInputSize)+"]";
+				goto cleanup;
+			}
+
+			if(inHardware != getHardwareType(dCALBin, iCALSize)) {
+				StatusBar->Panels->Items[0]->Text = "Hardware types do not match";
+				goto cleanup;
+			}
+
+			char boxCode = verifyBoxCodes(dOutBin, dCALBin, iCALSize);
+			if(boxCode == -2 && ConvertCheckBox->Checked) {
+				StatusBar->Panels->Items[0]->Text = "Boxcodes do not match";
+				goto cleanup;
+			}
+
+			memcpy(&dOutBin[inHardware->blocks[4].bin_pos], &dCALBin[iCALOffset], inHardware->blocks[4].length);
+		}
+
+		//write output bin
+		FILE* fOut = fopen((char*)fileOutName.c_str(), "wb");
+		if(fOut == NULL) {
+			StatusBar->Panels->Items[0]->Text = "Unable to save file ["+fileOutName+"]";
+			goto cleanup;
+		}
+		fwrite(dOutBin, 1, inHardware->bin_size, fOut);
+		fclose(fOut);
+	} else {
+		//separate block bins
+		for(int i=0; i<5; i++) {
+			FILE* fOut = fopen((char*)(fileOutName+IntToStr(i)).c_str(), "wb");
+			if(fOut == NULL) {
+				StatusBar->Panels->Items[0]->Text = "Unable to save file ["+fileOutName+"]";
+				goto cleanup;
+			}
+			fwrite(&dOutBin[inHardware->blocks[i].ghidra_pos], 1, inHardware->blocks[i].length, fOut);
+			fclose(fOut);
 		}
 	}
+
+	StatusBar->Panels->Items[0]->Text = "Wrote "+AnsiString(inHardware->name)+" bin ["+fileOutName+"]";
+
+cleanup:
+	if(dInputBin)
+		free(dInputBin);
+	if(dCALBin)
+		free(dCALBin);
+	if(dOutBin)
+		free(dOutBin);
 }
 //---------------------------------------------------------------------------
 void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
@@ -349,58 +418,37 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 		SaveDialog->Filter = "Bin|*.bin";
 		SaveDialog->FileName = inFileName;
 	}
-	if(!SaveDialog->Execute()) {
-		return;
-	}
-	AnsiString outFileName = SaveDialog->FileName;
+
+	int8_t iResult;
+	uint32_t iInputSize,iPatchSize;
+	uint8_t *dInputBin = NULL, *dPatchBin = NULL;
 
 	//open input bin
-	FILE* fInputBin = fopen((char*)inFileName.c_str(), "rb");
-	if(fInputBin == NULL) {
-		StatusBar->Panels->Items[0]->Text = "Unable to open file ["+inFileName+"]";
-		return;
+	dInputBin = loadFile((char*)inFileName.c_str(), MAX_BINSIZE, &iInputSize, &iResult);
+	if(iResult) {
+		setFileResultStatus(StatusBar, iResult, inFileName);
+		goto cleanup;
 	}
 
 	//open patch bin
-	FILE* fPatchBin = fopen((char*)patchFileName.c_str(), "rb");
-	if(fPatchBin == NULL) {
-		StatusBar->Panels->Items[0]->Text = "Unable to open file ["+patchFileName+"]";
-		fclose(fInputBin);
-		return;
+	dPatchBin = loadFile((char*)patchFileName.c_str(), MAX_BINSIZE, &iPatchSize, &iResult);
+	if(iResult) {
+		setFileResultStatus(StatusBar, iResult, patchFileName);
+		goto cleanup;
 	}
-
-	//check size
-	fseek(fInputBin, 0L, SEEK_END);
-	int iInputSize = ftell(fInputBin);
-	rewind(fInputBin);
-	fseek(fPatchBin, 0L, SEEK_END);
-	int iPatchSize = ftell(fPatchBin);
-	rewind(fPatchBin);
-
-	//error check size of bins
-	if(CreateRadioButton->Checked) {
-		if(iPatchSize != iInputSize) {
-			StatusBar->Panels->Items[0]->Text = "File sizes must match";
-			fclose(fInputBin);
-			fclose(fPatchBin);
-			return;
-		}
-	}
-
-	//read bin data
-	BYTE* dInputBin = (BYTE*)malloc(iInputSize);
-	fread(dInputBin, sizeof(BYTE), iInputSize, fInputBin);
-	fclose(fInputBin);
-	BYTE* dPatchBin = (BYTE*)malloc(iPatchSize);
-	fread(dPatchBin, sizeof(BYTE), iPatchSize, fPatchBin);
-	fclose(fPatchBin);
 
 	hardware_t*	inHardware;
 	char		inSoftcode[9];
-	inHardware = getHardwareType(dInputBin);
+	inHardware = getHardwareType(dInputBin, iInputSize);
 	getSoftcode(inHardware, dInputBin, inSoftcode);
 
 	if(CreateRadioButton->Checked) {
+		//error check size of bins
+		if(iPatchSize != iInputSize) {
+			StatusBar->Panels->Items[0]->Text = "File sizes must match";
+			goto cleanup;
+		}
+
 		int gapFill;
 		try {
 			gapFill = StrToInt(GapFillEdit->Text);
@@ -454,13 +502,15 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 		}
 
 		//write output patch
+		if(!SaveDialog->Execute()) {
+			return;
+		}
+		AnsiString outFileName = SaveDialog->FileName;
 		FILE* fOutPatch = fopen((char*)outFileName.c_str(), "wb");
 		if(fOutPatch == NULL) {
 			StatusBar->Panels->Items[0]->Text = "Unable to save file ["+outFileName+"]";
 			free(blockData);
-			free(dInputBin);
-			free(dPatchBin);
-			return;
+			goto cleanup;
 		}
 		patch_header_t header = {
 			BTP_VERSION,
@@ -478,49 +528,39 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 
 		//cleanup
 		free(blockData);
-		free(dInputBin);
-		free(dPatchBin);
 
 		//update statusbar
 		StatusBar->Panels->Items[0]->Text = "Created Patch: "+IntToStr(patchSize)+"bytes "+IntToStr(blockCount)+"blocks ["+outFileName+"]";
 	} else {
-		patch_header_t *header = (patch_header_t*)dPatchBin;
-		AnsiString btp_version = header->version;
-		AnsiString soft_code_patch = header->soft_code;
-		AnsiString soft_code_bin = inSoftcode;
+		patch_header_t *header 		= (patch_header_t*)dPatchBin;
+		AnsiString btp_version 		= header->version;
+		AnsiString soft_code_patch 	= header->soft_code;
+		AnsiString soft_code_bin 	= inSoftcode;
 
 		//check file version
 		if(btp_version.Trim() != BTP_VERSION) {
-			free(dInputBin);
-			free(dPatchBin);
 			StatusBar->Panels->Items[0]->Text = "Patch file version mismatch ["+btp_version+"]";
-			return;
+			goto cleanup;
 		}
 
 		//check file size
 		if(iInputSize != header->file_size) {
-			free(dInputBin);
-			free(dPatchBin);
-			StatusBar->Panels->Items[0]->Text = "Incorrect input bin size ["+IntToStr(iInputSize)+":"+IntToStr((int32_t)header->file_size)+"]";
-			return;
+			StatusBar->Panels->Items[0]->Text = "Incorrect input bin size ["+IntToStr((int32_t)iInputSize)+":"+IntToStr((int32_t)header->file_size)+"]";
+			goto cleanup;
 		}
 
 		//check software code
 		if(soft_code_patch.Trim() != soft_code_bin.Trim()) {
-			free(dInputBin);
-			free(dPatchBin);
-			StatusBar->Panels->Items[0]->Text = "Patch and bin software codes do not match ["+AnsiString(inSoftcode)+":"+AnsiString(header->soft_code)+"]";
-			return;
+			StatusBar->Panels->Items[0]->Text = "Patch and bin software codes do not match ["+soft_code_patch.Trim()+":"+soft_code_bin.Trim()+"]";
+			goto cleanup;
 		}
 
 		//check patch checksum
 		uint8_t*	block_data = dPatchBin + sizeof(patch_header_t);
 		uint32_t	block_checksum = getChecksum(iPatchSize-sizeof(patch_header_t), block_data, 0xFFFFFFFF);
 		if(block_checksum != header->block_checksum) {
-			free(dInputBin);
-			free(dPatchBin);
 			StatusBar->Panels->Items[0]->Text = "Invalid patch checksum";
-			return;
+			goto cleanup;
 		}
 
 		bool remove_patch = false;
@@ -538,11 +578,8 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 			patch_block_t *block_header = (patch_block_t*)block_data_tmp;
 
 			if(!checkPatchBlock(iInputSize, dInputBin, block_data_tmp, remove_patch)) {
-				free(dInputBin);
-				free(dPatchBin);
-
 				StatusBar->Panels->Items[0]->Text = bin_str;
-				return;
+				goto cleanup;
 			}
 
 			block_data_tmp += sizeof(patch_block_t) + block_header->length * 2;
@@ -555,10 +592,8 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 			patch_block_t *block_header = (patch_block_t*)block_data_tmp;
 
 			if(!setPatchBlock(iInputSize, dInputBin, block_data_tmp, !remove_patch)) {
-				free(dInputBin);
-				free(dPatchBin);
 				StatusBar->Panels->Items[0]->Text = "Patch block is invalid";
-				return;
+				goto cleanup;
 			}
 
 			patchSize += block_header->length;
@@ -566,23 +601,27 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 		}
 
 		//write output bin
+		if(!SaveDialog->Execute()) {
+			return;
+		}
+		AnsiString outFileName = SaveDialog->FileName;
 		FILE* fOutBin = fopen((char*)outFileName.c_str(), "wb");
 		if(fOutBin == NULL) {
 			StatusBar->Panels->Items[0]->Text = "Unable to save file ["+outFileName+"]";
-			free(dInputBin);
-			free(dPatchBin);
-			return;
+			goto cleanup;
 		}
 		fwrite(dInputBin, sizeof(unsigned char), iInputSize, fOutBin);
 		fclose(fOutBin);
 
-		//cleen up
-		free(dInputBin);
-		free(dPatchBin);
-
 		//update statusbar
 		StatusBar->Panels->Items[0]->Text = status_str+IntToStr(patchSize)+"bytes "+IntToStr((int32_t)header->block_count)+"blocks ["+outFileName+"]";
 	}
+
+cleanup:
+	if(dInputBin)
+		free(dInputBin);
+	if(dPatchBin)
+		free(dPatchBin);
 }
 //---------------------------------------------------------------------------
 void __fastcall TMainForm::SwapButtonClick(TObject *Sender)
@@ -591,97 +630,95 @@ void __fastcall TMainForm::SwapButtonClick(TObject *Sender)
 	OpenDialog->DefaultExt = ".bin";
 	OpenDialog->Filter = "Bin|*.bin";
 	OpenDialog->Title = "Open ASW Bin";
-	if(OpenDialog->Execute()) {
-		AnsiString	fileInName = OpenDialog->FileName;
-		OpenDialog->Title = "Open CAL Bin";
-		if(OpenDialog->Execute()) {
-			AnsiString	fileCALName = OpenDialog->FileName;
-			SaveDialog->DefaultExt = ".bin";
-			SaveDialog->Filter = "Bin|*.bin";
-			if(SaveDialog->Execute()) {
-				//open input bin
-				FILE* fIn = fopen((char*)fileInName.c_str(), "rb");
-				if(fIn == NULL) {
-					StatusBar->Panels->Items[0]->Text = "Unable to open file ["+fileInName+"]";
-					return;
-				}
-
-				//read input bin
-				BYTE* dataIn = (BYTE*)malloc(simosHW[0].bin_size);
-				uint32_t inSize = fread(dataIn, sizeof(BYTE), simosHW[0].bin_size, fIn);
-				fclose(fIn);
-
-				hardware_t* currentHardware;
-				if(inSize != simosHW[0].bin_size || !(currentHardware = getHardwareType(dataIn))) {
-					StatusBar->Panels->Items[0]->Text = "Invalid input bin type ["+IntToStr((int)inSize)+"]";
-					free(dataIn);
-					return;
-				}
-
-				//open cal bin
-				FILE* fCAL = fopen((char*)fileCALName.c_str(), "rb");
-				if(fIn == NULL) {
-					StatusBar->Panels->Items[0]->Text = "Unable to open file ["+fileInName+"]";
-					free(dataIn);
-					return;
-				}
-
-				//read cal bin
-				BYTE* dataCAL = (BYTE*)malloc(simosHW[0].bin_size);
-				inSize = fread(dataCAL, sizeof(BYTE), simosHW[0].bin_size, fCAL);
-				fclose(fCAL);
-
-				bool validBin = false;
-				if(inSize == currentHardware->bin_size) {
-					validBin = true;
-				} else if(inSize == currentHardware->blocks[4].length) {
-					memcpy(&dataCAL[currentHardware->blocks[4].bin_pos], dataCAL, currentHardware->blocks[4].length);
-					validBin = true;
-				}
-
-				if(!validBin || currentHardware != getHardwareType(dataCAL)) {
-					StatusBar->Panels->Items[0]->Text = "Invalid CAL bin type ["+IntToStr((int)inSize)+"]";
-					free(dataIn);
-					free(dataCAL);
-					return;
-				}
-
-				char boxCode = verifyBoxCodes(dataCAL, dataIn);
-				if(boxCode == -2 && SwapCheckBox->Checked) {
-					StatusBar->Panels->Items[0]->Text = "Boxcodes do not match ["+IntToStr((int)inSize)+"]";
-					free(dataIn);
-					free(dataCAL);
-					return;
-				}
-
-				if(boxCode == -1) {
-					StatusBar->Panels->Items[0]->Text = "Hardware types do not match ["+IntToStr((int)inSize)+"]";
-					free(dataIn);
-					free(dataCAL);
-					return;
-				}
-
-				memcpy(&dataIn[currentHardware->blocks[4].bin_pos], &dataCAL[currentHardware->blocks[4].bin_pos], currentHardware->blocks[4].length);
-
-				//write output bin
-				AnsiString fileOutName = SaveDialog->FileName;
-				FILE* fOut = fopen((char*)fileOutName.c_str(), "wb");
-				if(fOut == NULL) {
-					StatusBar->Panels->Items[0]->Text = "Unable to save file ["+fileOutName+"]";
-					free(dataIn);
-					free(dataCAL);
-					return;
-				}
-				fwrite(dataIn, 1, currentHardware->bin_size, fOut);
-
-				fclose(fOut);
-				free(dataIn);
-				free(dataCAL);
-
-				StatusBar->Panels->Items[0]->Text = "Wrote "+AnsiString(currentHardware->name)+" bin ["+fileOutName+"]";
-			}
-		}
+	if(!OpenDialog->Execute()) {
+		return;
 	}
+	AnsiString	inFileName = OpenDialog->FileName;
+	OpenDialog->Title = "Open CAL Bin";
+	if(!OpenDialog->Execute()) {
+		return;
+	}
+	AnsiString	fileCALName = OpenDialog->FileName;
+	SaveDialog->DefaultExt = ".bin";
+	SaveDialog->Filter = "Bin|*.bin";
+	if(!SaveDialog->Execute()) {
+		return;
+	}
+	AnsiString fileOutName = SaveDialog->FileName;
+
+	int8_t 		iResult;
+	uint32_t 	iInputSize, iCALSize;
+	uint8_t 	*dInputBin = NULL, *dCALBin = NULL;
+	FILE* 		fOut;
+	uint32_t 	iCALOffset = 0;
+	bool 		validBin = false;
+	char 		boxCode;
+
+	//open input bin
+	dInputBin = loadFile((char*)inFileName.c_str(), MAX_BINSIZE, &iInputSize, &iResult);
+	if(iResult) {
+		setFileResultStatus(StatusBar, iResult, inFileName);
+		goto cleanup;
+	}
+
+	//open CAL bin
+	dCALBin = loadFile((char*)fileCALName.c_str(), MAX_BINSIZE, &iCALSize, &iResult);
+	if(iResult) {
+		setFileResultStatus(StatusBar, iResult, fileCALName);
+		goto cleanup;
+	}
+
+	//get input bin hardware type
+	hardware_t* inHardware;
+	if(iInputSize != simosHW[0].bin_size || !(inHardware = getHardwareType(dInputBin, iInputSize))) {
+		StatusBar->Panels->Items[0]->Text = "Invalid input bin type ["+IntToStr((int)iInputSize)+"]";
+		goto cleanup;
+	}
+
+	//validate bin and get type
+	if(iInputSize == inHardware->bin_size) {
+		validBin = true;
+		iCALOffset = inHardware->blocks[4].bin_pos;
+	} else if(iInputSize == inHardware->blocks[4].length) {
+		validBin = true;
+	}
+
+	if(!validBin) {
+		StatusBar->Panels->Items[0]->Text = "Invalid CAL bin type";
+		goto cleanup;
+	}
+
+	if(inHardware != getHardwareType(dCALBin, iCALSize)) {
+		StatusBar->Panels->Items[0]->Text = "Hardware types do not match";
+		goto cleanup;
+	}
+
+	//check box codes
+	boxCode = verifyBoxCodes(dInputBin, dCALBin, iCALSize);
+	if(boxCode == -2 && SwapCheckBox->Checked) {
+		StatusBar->Panels->Items[0]->Text = "Boxcodes do not match";
+		goto cleanup;
+	}
+
+	//swap CAL block
+	memcpy(&dInputBin[inHardware->blocks[4].bin_pos], &dCALBin[iCALOffset], inHardware->blocks[4].length);
+
+	//write output bin
+	fOut = fopen((char*)fileOutName.c_str(), "wb");
+	if(fOut == NULL) {
+		StatusBar->Panels->Items[0]->Text = "Unable to save file ["+fileOutName+"]";
+		goto cleanup;
+	}
+	fwrite(dInputBin, 1, inHardware->bin_size, fOut);
+	fclose(fOut);
+
+	StatusBar->Panels->Items[0]->Text = "Wrote "+AnsiString(inHardware->name)+" bin ["+fileOutName+"]";
+
+cleanup:
+	if(dInputBin)
+		free(dInputBin);
+	if(dCALBin)
+		free(dCALBin);
 }
 //---------------------------------------------------------------------------
 
