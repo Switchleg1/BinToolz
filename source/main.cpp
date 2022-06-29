@@ -676,10 +676,10 @@ void __fastcall TMainForm::SwapButtonClick(TObject *Sender)
 	}
 
 	//validate bin and get type
-	if(iInputSize == inHardware->bin_size) {
+	if(iCALSize == inHardware->bin_size) {
 		validBin = true;
 		iCALOffset = inHardware->blocks[4].bin_pos;
-	} else if(iInputSize == inHardware->blocks[4].length) {
+	} else if(iCALSize == inHardware->blocks[4].length) {
 		validBin = true;
 	}
 
