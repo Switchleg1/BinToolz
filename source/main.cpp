@@ -248,6 +248,25 @@ uint8_t* loadFile(char* name, uint32_t max_size, uint32_t* size, int8_t* result)
 	return data;
 }
 //---------------------------------------------------------------------------
+void saveFile(char* name, uint8_t *data, uint32_t* size, int8_t* result)
+{
+	FILE* file = fopen(name, "wb");
+	if(file == NULL) {
+		*result = -5;
+		return;
+	}
+	uint32_t actual_size = fwrite(data, sizeof(uint8_t), *size, file);
+	if(actual_size != *size) {
+		*size = actual_size;
+		*result = -6;
+		fclose(file);
+		return;
+	}
+	fclose(file);
+
+	*result = 0;
+}
+//---------------------------------------------------------------------------
 void setFileResultStatus(TStatusBar* status, int8_t result, AnsiString fileName)
 {
 	switch(result) {
@@ -262,6 +281,12 @@ void setFileResultStatus(TStatusBar* status, int8_t result, AnsiString fileName)
 		break;
 	case -4:
 		status->Panels->Items[0]->Text = "Unable to read file data ["+fileName+"]";
+		break;
+	case -5:
+		status->Panels->Items[0]->Text = "Unable to save file ["+fileName+"]";
+		break;
+	case -6:
+		status->Panels->Items[0]->Text = "Unable to write data ["+fileName+"]";
 		break;
 	}
 }
@@ -355,23 +380,24 @@ void __fastcall TMainForm::ConvertButtonClick(TObject *Sender)
 		}
 
 		//write output bin
-		FILE* fOut = fopen((char*)fileOutName.c_str(), "wb");
-		if(fOut == NULL) {
-			StatusBar->Panels->Items[0]->Text = "Unable to save file ["+fileOutName+"]";
+		uint32_t iSize = inHardware->bin_size;
+		int8_t iResult = 0;
+		saveFile((char*)fileOutName.c_str(), dOutBin, &iSize, &iResult);
+		if(iResult) {
+			setFileResultStatus(StatusBar, iResult, fileOutName);
 			goto cleanup;
 		}
-		fwrite(dOutBin, 1, inHardware->bin_size, fOut);
-		fclose(fOut);
 	} else {
 		//separate block bins
 		for(int i=0; i<5; i++) {
-			FILE* fOut = fopen((char*)(fileOutName+IntToStr(i)).c_str(), "wb");
-			if(fOut == NULL) {
-				StatusBar->Panels->Items[0]->Text = "Unable to save file ["+fileOutName+"]";
+			//write output bin
+			uint32_t iSize = inHardware->blocks[i].length;
+			int8_t iResult = 0;
+			saveFile((char*)(fileOutName+IntToStr(i)).c_str(), &dOutBin[inHardware->blocks[i].ghidra_pos], &iSize, &iResult);
+			if(iResult) {
+				setFileResultStatus(StatusBar, iResult, fileOutName+IntToStr(i));
 				goto cleanup;
 			}
-			fwrite(&dOutBin[inHardware->blocks[i].ghidra_pos], 1, inHardware->blocks[i].length, fOut);
-			fclose(fOut);
 		}
 	}
 
@@ -420,7 +446,7 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 	}
 
 	int8_t iResult;
-	uint32_t iInputSize,iPatchSize;
+	uint32_t iInputSize, iPatchSize, iSaveSize;
 	uint8_t *dInputBin = NULL, *dPatchBin = NULL;
 
 	//open input bin
@@ -456,6 +482,7 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 			gapFill = 0;
 		}
 
+		//create block data
 		BYTE*		blockData	= NULL;
 		uint32_t 	blockSize	= 0;
 		int32_t 	blockCount	= 0;
@@ -501,33 +528,33 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 			}
 		}
 
+		//create output header
+		free(dPatchBin);
+		iSaveSize = blockSize+sizeof(patch_header_t);
+		dPatchBin = (uint8_t*)malloc(iSaveSize);
+		memset(dPatchBin, 0, iSaveSize);
+		patch_header_t *header = (patch_header_t*)dPatchBin;
+		strcpy(header->version, BTP_VERSION);
+		strcpy(header->soft_code, inSoftcode);
+		header->block_checksum	= getChecksum(blockSize, blockData, 0xFFFFFFFF);
+		header->block_count		= blockCount;
+		header->file_size		= iInputSize;
+		memcpy(&dPatchBin[sizeof(patch_header_t)], blockData, blockSize);
+		free(blockData);
+
 		//write output patch
 		if(!SaveDialog->Execute()) {
-			return;
-		}
-		AnsiString outFileName = SaveDialog->FileName;
-		FILE* fOutPatch = fopen((char*)outFileName.c_str(), "wb");
-		if(fOutPatch == NULL) {
-			StatusBar->Panels->Items[0]->Text = "Unable to save file ["+outFileName+"]";
-			free(blockData);
 			goto cleanup;
 		}
-		patch_header_t header = {
-			BTP_VERSION,
-			"",
-			0,
-			0
-		};
-		strcpy(header.soft_code, inSoftcode);
-		header.block_checksum	= getChecksum(blockSize, blockData, 0xFFFFFFFF);
-		header.block_count		= blockCount;
-		header.file_size		= iInputSize;
-		fwrite(&header, 1, sizeof(patch_header_t), fOutPatch);
-		fwrite(blockData, 1, blockSize, fOutPatch);
-        fclose(fOutPatch);
+		AnsiString outFileName = SaveDialog->FileName;
 
-		//cleanup
-		free(blockData);
+		//write output bin
+		iResult = 0;
+		saveFile((char*)outFileName.c_str(), dPatchBin, &iSaveSize, &iResult);
+		if(iResult) {
+			setFileResultStatus(StatusBar, iResult, outFileName);
+			goto cleanup;
+		}
 
 		//update statusbar
 		StatusBar->Panels->Items[0]->Text = "Created Patch: "+IntToStr(patchSize)+"bytes "+IntToStr(blockCount)+"blocks ["+outFileName+"]";
@@ -605,13 +632,15 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 			return;
 		}
 		AnsiString outFileName = SaveDialog->FileName;
-		FILE* fOutBin = fopen((char*)outFileName.c_str(), "wb");
-		if(fOutBin == NULL) {
-			StatusBar->Panels->Items[0]->Text = "Unable to save file ["+outFileName+"]";
+
+		//write output bin
+		iSaveSize = inHardware->bin_size;
+		iResult = 0;
+		saveFile((char*)outFileName.c_str(), dInputBin, &iSaveSize, &iResult);
+		if(iResult) {
+			setFileResultStatus(StatusBar, iResult, outFileName);
 			goto cleanup;
 		}
-		fwrite(dInputBin, sizeof(unsigned char), iInputSize, fOutBin);
-		fclose(fOutBin);
 
 		//update statusbar
 		StatusBar->Panels->Items[0]->Text = status_str+IntToStr(patchSize)+"bytes "+IntToStr((int32_t)header->block_count)+"blocks ["+outFileName+"]";
@@ -624,7 +653,7 @@ cleanup:
 		free(dPatchBin);
 }
 //---------------------------------------------------------------------------
-void __fastcall TMainForm::SwapButtonClick(TObject *Sender)
+void __fastcall TMainForm::ImportButtonClick(TObject *Sender)
 {
 	StatusBar->Panels->Items[0]->Text = "";
 	OpenDialog->DefaultExt = ".bin";
@@ -647,7 +676,7 @@ void __fastcall TMainForm::SwapButtonClick(TObject *Sender)
 	AnsiString fileOutName = SaveDialog->FileName;
 
 	int8_t 		iResult;
-	uint32_t 	iInputSize, iCALSize;
+	uint32_t 	iInputSize, iCALSize, iSaveSize;
 	uint8_t 	*dInputBin = NULL, *dCALBin = NULL;
 	FILE* 		fOut;
 	uint32_t 	iCALOffset = 0;
@@ -704,13 +733,13 @@ void __fastcall TMainForm::SwapButtonClick(TObject *Sender)
 	memcpy(&dInputBin[inHardware->blocks[4].bin_pos], &dCALBin[iCALOffset], inHardware->blocks[4].length);
 
 	//write output bin
-	fOut = fopen((char*)fileOutName.c_str(), "wb");
-	if(fOut == NULL) {
-		StatusBar->Panels->Items[0]->Text = "Unable to save file ["+fileOutName+"]";
+	iSaveSize = inHardware->bin_size;
+	iResult = 0;
+	saveFile((char*)fileOutName.c_str(), dInputBin, &iSaveSize, &iResult);
+	if(iResult) {
+		setFileResultStatus(StatusBar, iResult, fileOutName);
 		goto cleanup;
 	}
-	fwrite(dInputBin, 1, inHardware->bin_size, fOut);
-	fclose(fOut);
 
 	StatusBar->Panels->Items[0]->Text = "Wrote "+AnsiString(inHardware->name)+" bin ["+fileOutName+"]";
 
@@ -719,6 +748,59 @@ cleanup:
 		free(dInputBin);
 	if(dCALBin)
 		free(dCALBin);
+}
+//---------------------------------------------------------------------------
+void __fastcall TMainForm::ExportButtonClick(TObject *Sender)
+{
+	StatusBar->Panels->Items[0]->Text = "";
+	OpenDialog->DefaultExt = ".bin";
+	OpenDialog->Filter = "Bin|*.bin";
+	OpenDialog->Title = "Open FULL Bin";
+	if(!OpenDialog->Execute()) {
+		return;
+	}
+	AnsiString	inFileName = OpenDialog->FileName;
+	SaveDialog->DefaultExt = ".bin";
+	SaveDialog->Filter = "Bin|*.bin";
+	if(!SaveDialog->Execute()) {
+		return;
+	}
+	AnsiString fileOutName = SaveDialog->FileName;
+
+	int8_t 		iResult;
+	uint32_t 	iInputSize, iSaveSize;
+	uint8_t 	*dInputBin = NULL;
+	FILE* 		fOut;
+	char 		boxCode;
+
+	//open input bin
+	dInputBin = loadFile((char*)inFileName.c_str(), MAX_BINSIZE, &iInputSize, &iResult);
+	if(iResult) {
+		setFileResultStatus(StatusBar, iResult, inFileName);
+		goto cleanup;
+	}
+
+	//get input bin hardware type
+	hardware_t* inHardware;
+	if(iInputSize != simosHW[0].bin_size || !(inHardware = getHardwareType(dInputBin, iInputSize))) {
+		StatusBar->Panels->Items[0]->Text = "Invalid input bin type ["+IntToStr((int)iInputSize)+"]";
+		goto cleanup;
+	}
+
+	//write output bin
+	iSaveSize = inHardware->blocks[4].length;
+	iResult = 0;
+	saveFile((char*)fileOutName.c_str(), &dInputBin[inHardware->blocks[4].bin_pos], &iSaveSize, &iResult);
+	if(iResult) {
+		setFileResultStatus(StatusBar, iResult, fileOutName);
+		goto cleanup;
+	}
+
+	StatusBar->Panels->Items[0]->Text = "Wrote "+AnsiString(inHardware->name)+" bin ["+fileOutName+"]";
+
+cleanup:
+	if(dInputBin)
+		free(dInputBin);
 }
 //---------------------------------------------------------------------------
 
