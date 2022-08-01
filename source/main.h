@@ -26,7 +26,6 @@ __published:	// IDE-managed Components
 	TRadioButton *BlockRadioButton;
 	TSaveDialog *SaveDialog;
 	TOpenDialog *OpenDialog;
-	TStatusBar *StatusBar;
 	TCheckBox *SwapCheckBox;
 	TCheckBox *ConvertCheckBox;
 	TEdit *GapFillEdit;
@@ -34,12 +33,20 @@ __published:	// IDE-managed Components
 	TRadioButton *AddRadioButton;
 	TRadioButton *RemoveRadioButton;
 	TRadioButton *CreateRadioButton;
+	TListBox *LogListBox;
+	TRadioButton *CheckRadioButton;
+	TRadioButton *ImportRadioButton;
+	TRadioButton *ExportRadioButton;
 	void __fastcall ConvertButtonClick(TObject *Sender);
 	void __fastcall PatchButtonClick(TObject *Sender);
-	void __fastcall SwapButtonClick(TObject *Sender);
+	void __fastcall CALButtonClick(TObject *Sender);
+	void __fastcall addToLog(AnsiString line);
+	void __fastcall fileResult(int8_t result, AnsiString fileName);
+	void __fastcall LogListBoxDblClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TMainForm(TComponent* Owner);
+	__fastcall ~TMainForm();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TMainForm *MainForm;
