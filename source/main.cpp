@@ -208,7 +208,7 @@ void __fastcall TMainForm::ConvertButtonClick(TObject *Sender)
 			}
 
 			//swap block
-			iResult = dInputBin->swapBlock(dCALBin, 4);
+			iResult = dOutBin->swapBlock(dCALBin, 4);
 			switch(iResult) {
 				case -1:
 					addToLog("Invalid CAL bin type ["+fileCALName+"]");
