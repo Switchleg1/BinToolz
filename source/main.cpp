@@ -293,6 +293,14 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 		fileResult(iResult, inFileName);
 		goto cleanup;
 	}
+	if(!dInputBin->softwareCode()) {
+		addToLog("Software code not found ["+inFileName+"] Size ["+IntToStr((int32_t)dInputBin->size())+"]");
+		goto cleanup;
+	}
+	char sw_code[12];
+	memcpy(sw_code, dInputBin->softwareCode(), 11);
+	addToLog("Hardware code ["+AnsiString(dInputBin->hardwareType()->name)+"]");
+	addToLog("Software code ["+AnsiString(sw_code)+"]");
 	addToLog("Opened input bin ["+inFileName+"] Size ["+IntToStr((int32_t)dInputBin->size())+"]");
 
 	//open patch bin
@@ -393,7 +401,7 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 	} else {
 		patch_header_t *header 		= (patch_header_t*)dPatchBin->data();
 		AnsiString btp_version 		= header->version;
-		AnsiString soft_code_patch 	= header->soft_code;
+		AnsiString soft_code_patch 	= AnsiString(header->soft_code).SetLength(8);
 		AnsiString soft_code_bin 	= AnsiString(dInputBin->softwareCode()).SetLength(8);
 
 		//check file version
@@ -443,12 +451,15 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 			if(!checkPatchBlock(dInputBin->size(), dInputBin->data(), block_data_tmp, remove_patch)) {
 				addToLog(bin_str);
 				goto cleanup;
-			} else if(CheckRadioButton->Checked) {
-             	addToLog(status_str);
-				goto cleanup;
 			}
 
 			block_data_tmp += sizeof(patch_block_t) + block_header->length * 2;
+		}
+
+		//check patch succeeded
+		if(CheckRadioButton->Checked) {
+			addToLog(status_str);
+			goto cleanup;
 		}
 
 		//patch bin data
@@ -547,7 +558,7 @@ void __fastcall TMainForm::CALButtonClick(TObject *Sender)
 
 	//get input bin hardware type
 	inHardware = dInputBin->hardwareType();
-	if(dInputBin->size() != MAX_BINSIZE || !inHardware) {
+	if(!inHardware) {
 		addToLog("Invalid input bin ["+inFileName+"]");
 		goto cleanup;
 	}

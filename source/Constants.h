@@ -11,7 +11,7 @@ typedef char			int8_t;
 #define TRUE			1
 #define FALSE			0
 //---------------------------------------------------------------------------
-#define HW_COUNT		2
+#define HW_COUNT		4
 #define BTP_VERSION		"BinToolz Patch v1.1"
 #define MAX_BINSIZE     4194304
 //---------------------------------------------------------------------------

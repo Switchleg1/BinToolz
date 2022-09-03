@@ -37,6 +37,38 @@ hardware_t  simosHW[HW_COUNT] = {
 			{0x001ff600, 	0x002c0000,	0x0013FC00},
 			{0x0033f200, 	0x00220000,	0x0009FC00}
 		}
+	},
+	{
+		"DQ250",
+		0x4FFB0,
+		0x4FFBB,
+		0x4FFE0,
+		0x4FFE4,
+		1572864,
+		0x0,
+		{
+			{0x0,			0x0,		0x0},
+			{0x0,			0x0,		0x0},
+			{0x0,			0x0,		0x00080E},
+			{0x0,			0x50000,	0x130000},
+			{0x0,			0x30000,	0x020000}
+		}
+	},
+	{
+		"DQ250",
+		0x3FFB0,
+		0x3FFBB,
+		0x3FFE0,
+		0x3FFE4,
+		1572864,
+		0x0,
+		{
+			{0x0,			0x0,		0x0},
+			{0x0,			0x0,		0x0},
+			{0x0,			0x0,		0x00080E},
+			{0x0,			0x40000,	0x130000},
+			{0x0,			0x20000,	0x020000}
+		}
 	}
 };
 //---------------------------------------------------------------------------
@@ -151,21 +183,27 @@ int32_t SimosBIN::clear()
 //---------------------------------------------------------------------------
 hardware_t* SimosBIN::hardwareType()
 {
-	if(iSize == MAX_BINSIZE) {
-		//determine simos version
-		for(uint32_t i=0; i<HW_COUNT; i++) {
+	//determine simos version
+	for(uint32_t i=0; i<HW_COUNT; i++) {
+		if(iSize == simosHW[i].bin_size) {
 			int8_t box_code[12];
 			memset(box_code, 0, 12);
 			memcpy(box_code, &pData[simosHW[i].box_code_start], 11);
 			if(strlen(box_code) != 0)
 				return &simosHW[i];
-		}
-	} else {
-		for(uint32_t i=0; i<HW_COUNT; i++) {
-			if(iSize == simosHW[i].blocks[4].length) {
+		} else if(iSize == simosHW[i].blocks[4].length) {
+        	int8_t box_code[12];
+			memset(box_code, 0, 12);
+			memcpy(box_code, &pData[simosHW[i].box_code_start-simosHW[i].blocks[4].length], 11);
+			if(strlen(box_code) != 0)
 				return &simosHW[i];
-			} else if(iSize == simosHW[i].ghidra_size) {
-				return &simosHW[i];
+		} else if(iSize == simosHW[i].ghidra_size) {
+			for(uint32_t i=0; i<HW_COUNT; i++) {
+				if(iSize == simosHW[i].blocks[4].length) {
+					return &simosHW[i];
+				} else if(iSize == simosHW[i].ghidra_size) {
+					return &simosHW[i];
+				}
 			}
 		}
 	}
@@ -175,7 +213,7 @@ hardware_t* SimosBIN::hardwareType()
 //---------------------------------------------------------------------------
 int8_t* SimosBIN::softwareCode()
 {
-	if(pData && iSize == MAX_BINSIZE) {
+	if(pData) {
 		hardware_t* hw = hardwareType();
 		if(hw) {
 			return &pData[hw->soft_code_start];
@@ -229,16 +267,18 @@ int32_t SimosBIN::verifyBoxCode(SimosBIN* bin)
 //---------------------------------------------------------------------------
 int32_t SimosBIN::swapBlock(SimosBIN* bin, uint8_t block)
 {
-	if(iSize == MAX_BINSIZE && block < 5) {
+	if(block < 5) {
 		hardware_t* hw = hardwareType();
-		if(hw && hw == bin->hardwareType()) {
-			if(iSize == bin->size() || (bin->size() != MAX_BINSIZE && block == 4)) {
-				memcpy(data(block), bin->data(block), hw->blocks[block].length);
-				return 0;
+		if(hw && iSize == hw->bin_size) {
+			if(bin->hardwareType() && strstr(hw->name, bin->hardwareType()->name)) {
+				if(bin->data(block)) {
+					memcpy(data(block), bin->data(block), hw->blocks[block].length);
+					return 0;
+				}
+				return -1;
 			}
-			return -1;
+			return -2;
 		}
-		return -2;
 	}
 	return -3;
 }
@@ -250,9 +290,9 @@ uint8_t* SimosBIN::data()
 //---------------------------------------------------------------------------
 uint8_t* SimosBIN::data(uint8_t block)
 {
-	if(iSize == MAX_BINSIZE && block < 5) {
+	if(block < 5) {
 		hardware_t* hw = hardwareType();
-		if(hw) {
+		if(hw && iSize == hw->bin_size) {
 			return &pData[hw->blocks[block].bin_pos];
 		}
 	}
