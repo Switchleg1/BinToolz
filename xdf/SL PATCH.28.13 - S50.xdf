@@ -740,7 +740,7 @@
       <min>-35</min>
       <max>0</max>
       <outputtype>1</outputtype>
-      <MATH equation="((1.0 * X) - 95.0 ) / (2.66667.0 - (0.0 * X))">
+      <MATH equation="((1.0 * X) - 95.0 ) / (2.66667 - (0.0 * X))">
         <VAR id="X" />
       </MATH>
     </XDFAXIS>
