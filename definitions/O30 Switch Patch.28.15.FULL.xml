@@ -1,0 +1,550 @@
+<ecus>
+  <ecu_struct id="SC8O30" type="SC8O30 Switch Patch" include="" desc_size="#400000" reverse_bytes="False" ecu_type="vag" flash_template="" checksum="">
+    <map name="Knock threshold for blink mil on knock average" type="1" help="" class="Switch Patch|Knock">
+      <data offset="#27bcf0" storagetype="uint8" func_2val="((1.0 * [x]) - 128.0) / 2.66" func_val2="(2.66 * ([x] / 1.0)) + 128.0" format="%0.2f" metric="degree" min="-48" max="47.62" order="rc" />
+    </map>
+    <map name="Knock threshold for blink mil on knock idividual cylinder" type="1" help="" class="Switch Patch|Knock">
+      <data offset="#27bd1a" storagetype="uint8" func_2val="((1.0 * [x]) - 128.0) / 2.66" func_val2="(2.66 * ([x] / 1.0)) + 128.0" format="%0.2f" metric="degree" min="-48" max="47.62" order="rc" />
+    </map>
+    <map name="Additional blink time for blink mil on knock (ms)" type="1" help="0 is disabled" class="Switch Patch|Knock">
+      <data offset="#27bcf1" storagetype="uint8" func_2val="((10.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 10.0)) + 0.0" format="%0.2f" metric="ms" min="0" max="2550" order="rc" />
+    </map>
+    <map name="Minimum engagement RPM" type="1" help="" class="Switch Patch|RAL">
+      <data offset="#27bcf2" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="rpm" min="0" max="8160" order="rc" />
+    </map>
+    <map name="Maximum engagement RPM" type="1" help="" class="Switch Patch|RAL">
+      <data offset="#27bcf4" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="rpm" min="0" max="8160" order="rc" />
+    </map>
+    <map name="Maximum engagement cycles" type="1" help="" class="Switch Patch|RAL">
+      <data offset="#27bcf6" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="sparks" min="0" max="65535" order="rc" />
+    </map>
+    <map name="Rev soft limit above engagement point" type="1" help="At this point the engine cuts fuel and spark to 1 cylinder every 4" class="Switch Patch|RAL">
+      <data offset="#27bcf8" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="rpm" min="0" max="8160" order="rc" />
+    </map>
+    <map name="Rev medium limit above engagement point" type="1" help="At this point the engine cuts fuel and spark to 1 cylinder every 3" class="Switch Patch|RAL">
+      <data offset="#27bcfa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="rpm" min="0" max="8160" order="rc" />
+    </map>
+    <map name="Rev hard limit above engagement point" type="1" help="At this point the engine cuts fuel and spark to 2 cylinder every 4" class="Switch Patch|RAL">
+      <data offset="#27bcfc" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="rpm" min="0" max="8160" order="rc" />
+    </map>
+    <map name="PUT modifier to prevent overboost" type="1" help="" class="Switch Patch|RAL">
+      <data offset="#27bcfe" storagetype="uint16" func_2val="((1.0 * [x]) - 32768.0) / 120.06017666543983" func_val2="(120.06017666543983 * ([x] / 1.0)) + 32768.0" format="%0.2f" metric="kpa" min="-2716.95" max="2716.95" order="rc" />
+    </map>
+    <map name="Ramp in cycles" type="1" help="" class="Switch Patch|RAL">
+      <data offset="#27bd00" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="rev" min="0" max="255" order="rc" />
+    </map>
+    <map name="Ramp out cycles" type="1" help="" class="Switch Patch|RAL">
+      <data offset="#27bd01" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="rev" min="0" max="255" order="rc" />
+    </map>
+    <map name="Maximum acceleration allowed to enable RAL" type="1" help="" class="Switch Patch|RAL">
+      <data offset="#27bd02" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 0.0" func_val2="(0.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="ms2" min="0" max="3" order="rc" />
+    </map>
+    <map name="RPM filtering amount" type="1" help="" class="Switch Patch|RAL">
+      <data offset="#27bd03" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="32" order="rc" />
+    </map>
+    <map name="Minimum oil temperature" type="1" help="" class="Switch Patch|RAL">
+      <data offset="#27bd04" storagetype="uint8" func_2val="((1.0 * [x]) - 40.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 40.0" format="%0.2f" metric="c" min="-40" max="215" order="rc" />
+    </map>
+    <map name="Minimum coolant temperature" type="1" help="" class="Switch Patch|RAL">
+      <data offset="#27bd05" storagetype="uint8" func_2val="((1.0 * [x]) - 64.0) / 1.33" func_val2="(1.33 * ([x] / 1.0)) + 64.0" format="%0.2f" metric="c" min="-48" max="142.5" order="rc" />
+    </map>
+    <map name="RAL engagement button" type="1" help="0: set 1: resume" class="Switch Patch|RAL">
+      <data offset="#27bd06" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="EGT ignition table" type="2" help="|X: x" class="Switch Patch|RAL">
+      <data offset="#27ca0c" storagetype="uint8" func_2val="((1.0 * [x]) - 95.0) / 2.66667" func_val2="(2.66667 * ([x] / 1.0)) + 95.0" format="%0.2f" metric="degree" min="-35.62" max="60" order="rc" />
+      <cols count="4.0" offset="#47ca04" storagetype="uint16" func_2val="((1.0 * [x]) - 8736.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 8736.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Disable clutch start (MT)" type="1" help="" class="Switch Patch|Misc">
+      <data offset="#27bd07" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="UI button" type="1" help="0: Cruise Cancel(off) 1: Cruise Resume 2: Variable speed setpoint 3: Pedals" class="Switch Patch|Map Switching">
+      <data offset="#27bd08" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="3" order="rc" />
+    </map>
+    <map name="Timeout" type="1" help="" class="Switch Patch|NLS">
+      <data offset="#27bd09" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 0.0" func_val2="(0.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="ms" min="0" max="2550" order="rc" />
+    </map>
+    <map name="Minimum engagement RPM" type="1" help="" class="Switch Patch|NLS">
+      <data offset="#27bd0a" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="rpm" min="2000" max="7000" order="rc" />
+    </map>
+    <map name="Minimum pedal" type="1" help="" class="Switch Patch|NLS">
+      <data offset="#27bd0c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 10.24" func_val2="(10.24 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="%" min="0" max="100" order="rc" />
+    </map>
+    <map name="Target RPM" type="1" help="" class="Switch Patch|NLS">
+      <data offset="#27bd0e" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="rpm" min="0" max="8160" order="rc" />
+    </map>
+    <map name="Timing during PU" type="1" help="" class="Switch Patch|NLS">
+      <data offset="#27bd10" storagetype="uint8" func_2val="((1.0 * [x]) - 95.0) / 2.666666666666667" func_val2="(2.666666666666667 * ([x] / 1.0)) + 95.0" format="%0.2f" metric="degree" min="-35.63" max="59.99" order="rc" />
+    </map>
+    <map name="Timing during RPM limiter and rampout" type="1" help="" class="Switch Patch|LC">
+      <data offset="#27bd11" storagetype="uint8" func_2val="((1.0 * [x]) - 95.0) / 2.666666666666667" func_val2="(2.666666666666667 * ([x] / 1.0)) + 95.0" format="%0.2f" metric="degree" min="-35.63" max="59.99" order="rc" />
+    </map>
+    <map name="Target TQ" type="1" help="" class="Switch Patch|LC">
+      <data offset="#27bd12" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="600" order="rc" />
+    </map>
+    <map name="Ramp out cycles" type="1" help="" class="Switch Patch|LC">
+      <data offset="#27bd14" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="rev" min="0" max="65535" order="rc" />
+    </map>
+    <map name="Target RPM" type="1" help="" class="Switch Patch|LC">
+      <data offset="#27bd16" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="rpm" min="0" max="8160" order="rc" />
+    </map>
+    <map name="Minimum oil temperature" type="1" help="" class="Switch Patch|LC">
+      <data offset="#27bd18" storagetype="uint8" func_2val="((1.0 * [x]) - 40.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 40.0" format="%0.2f" metric="c" min="-40" max="215" order="rc" />
+    </map>
+    <map name="Minimum coolant temperature" type="1" help="" class="Switch Patch|LC">
+      <data offset="#27bd19" storagetype="uint8" func_2val="((1.0 * [x]) - 64.0) / 1.33" func_val2="(1.33 * ([x] / 1.0)) + 64.0" format="%0.2f" metric="c" min="-48" max="142.5" order="rc" />
+    </map>
+    <map name="RPM limiter" type="1" help="" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#27bd20" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="rpm" min="0" max="8160" order="rc" />
+    </map>
+    <map name="RPM limiter" type="1" help="" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#27bd22" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="rpm" min="0" max="8160" order="rc" />
+    </map>
+    <map name="RPM limiter" type="1" help="" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#27bd24" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="rpm" min="0" max="8160" order="rc" />
+    </map>
+    <map name="RPM limiter" type="1" help="" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#27bd26" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="rpm" min="0" max="8160" order="rc" />
+    </map>
+    <map name="RPM limiter" type="1" help="" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#27bd28" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="rpm" min="0" max="8160" order="rc" />
+    </map>
+    <map name="Speed limter" type="1" help="" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#27bd2a" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 100.0" func_val2="(100.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="kph" min="0" max="655.34" order="rc" />
+    </map>
+    <map name="Speed limter" type="1" help="" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#27bd2c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 100.0" func_val2="(100.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="kph" min="0" max="655.34" order="rc" />
+    </map>
+    <map name="Speed limter" type="1" help="" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#27bd2e" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 100.0" func_val2="(100.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="kph" min="0" max="655.34" order="rc" />
+    </map>
+    <map name="Speed limter" type="1" help="" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#27bd30" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 100.0" func_val2="(100.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="kph" min="0" max="655.34" order="rc" />
+    </map>
+    <map name="Speed limter" type="1" help="" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#27bd32" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 100.0" func_val2="(100.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="kph" min="0" max="655.34" order="rc" />
+    </map>
+    <map name="Pops enable" type="1" help="" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#27bd34" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Pops enable" type="1" help="" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#27bd35" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Pops enable" type="1" help="" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#27bd36" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Pops enable" type="1" help="" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#27bd37" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Pops enable" type="1" help="" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#27bd38" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Lambda modifier" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#27bd3a" storagetype="uint16" func_2val="((1.0 * [x]) - 32768.0) / 1023.999999959999" func_val2="(1023.999999959999 * ([x] / 1.0)) + 32768.0" format="%0.2f" metric="" min="-31.99" max="31.99" order="rc" />
+      <cols count="12.0" offset="#40b1d9" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 0.03125" func_val2="(0.03125 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="8.0" offset="#454026" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 47.18142548596112" func_val2="(47.18142548596112 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Lambda modifier" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#27bdfa" storagetype="uint16" func_2val="((1.0 * [x]) - 32768.0) / 1023.999999959999" func_val2="(1023.999999959999 * ([x] / 1.0)) + 32768.0" format="%0.2f" metric="" min="-31.99" max="31.99" order="rc" />
+      <cols count="12.0" offset="#40b1d9" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 0.03125" func_val2="(0.03125 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="8.0" offset="#454026" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 47.18142548596112" func_val2="(47.18142548596112 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Lambda modifier" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#27beba" storagetype="uint16" func_2val="((1.0 * [x]) - 32768.0) / 1023.999999959999" func_val2="(1023.999999959999 * ([x] / 1.0)) + 32768.0" format="%0.2f" metric="" min="-31.99" max="31.99" order="rc" />
+      <cols count="12.0" offset="#40b1d9" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 0.03125" func_val2="(0.03125 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="8.0" offset="#454026" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 47.18142548596112" func_val2="(47.18142548596112 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Lambda modifier" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#27bf7a" storagetype="uint16" func_2val="((1.0 * [x]) - 32768.0) / 1023.999999959999" func_val2="(1023.999999959999 * ([x] / 1.0)) + 32768.0" format="%0.2f" metric="" min="-31.99" max="31.99" order="rc" />
+      <cols count="12.0" offset="#40b1d9" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 0.03125" func_val2="(0.03125 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="8.0" offset="#454026" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 47.18142548596112" func_val2="(47.18142548596112 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Lambda modifier" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#27c03a" storagetype="uint16" func_2val="((1.0 * [x]) - 32768.0) / 1023.999999959999" func_val2="(1023.999999959999 * ([x] / 1.0)) + 32768.0" format="%0.2f" metric="" min="-31.99" max="31.99" order="rc" />
+      <cols count="12.0" offset="#40b1d9" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 0.03125" func_val2="(0.03125 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="8.0" offset="#454026" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 47.18142548596112" func_val2="(47.18142548596112 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Spark modifier" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#27c0fa" storagetype="uint8" func_2val="((1.0 * [x]) - 95.0) / 2.666666666666667" func_val2="(2.666666666666667 * ([x] / 1.0)) + 95.0" format="%0.2f" metric="degree" min="-35.62" max="60" order="rc" />
+      <cols count="16.0" offset="#43c9e4" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="16.0" offset="#43c946" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 23.59071274298056" func_val2="(23.59071274298056 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Spark modifier" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#27c1fa" storagetype="uint8" func_2val="((1.0 * [x]) - 95.0) / 2.666666666666667" func_val2="(2.666666666666667 * ([x] / 1.0)) + 95.0" format="%0.2f" metric="degree" min="-35.62" max="60" order="rc" />
+      <cols count="16.0" offset="#43c9e4" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="16.0" offset="#43c946" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 23.59071274298056" func_val2="(23.59071274298056 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Spark modifier" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#27c2fa" storagetype="uint8" func_2val="((1.0 * [x]) - 95.0) / 2.666666666666667" func_val2="(2.666666666666667 * ([x] / 1.0)) + 95.0" format="%0.2f" metric="degree" min="-35.62" max="60" order="rc" />
+      <cols count="16.0" offset="#43c9e4" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="16.0" offset="#43c946" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 23.59071274298056" func_val2="(23.59071274298056 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Spark modifier" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#27c3fa" storagetype="uint8" func_2val="((1.0 * [x]) - 95.0) / 2.666666666666667" func_val2="(2.666666666666667 * ([x] / 1.0)) + 95.0" format="%0.2f" metric="degree" min="-35.62" max="60" order="rc" />
+      <cols count="16.0" offset="#43c9e4" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="16.0" offset="#43c946" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 23.59071274298056" func_val2="(23.59071274298056 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Spark modifier" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#27c4fa" storagetype="uint8" func_2val="((1.0 * [x]) - 95.0) / 2.666666666666667" func_val2="(2.666666666666667 * ([x] / 1.0)) + 95.0" format="%0.2f" metric="degree" min="-35.62" max="60" order="rc" />
+      <cols count="16.0" offset="#43c9e4" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="16.0" offset="#43c946" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 23.59071274298056" func_val2="(23.59071274298056 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="PUT setpoint" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#27c5fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 12.06017666543982" func_val2="(12.06017666543982 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="hpa" min="0" max="5434" order="cr" />
+      <cols count="12.0" offset="#47c9bc" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="8.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="PUT setpoint" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#27c6ba" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 12.06017666543982" func_val2="(12.06017666543982 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="hpa" min="0" max="5434" order="cr" />
+      <cols count="12.0" offset="#47c9bc" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="8.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="PUT setpoint" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#27c77a" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 12.06017666543982" func_val2="(12.06017666543982 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="hpa" min="0" max="5434" order="cr" />
+      <cols count="12.0" offset="#47c9bc" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="8.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="PUT setpoint" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#27c83a" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 12.06017666543982" func_val2="(12.06017666543982 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="hpa" min="0" max="5434" order="cr" />
+      <cols count="12.0" offset="#47c9bc" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="8.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="PUT setpoint" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#27c8fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 12.06017666543982" func_val2="(12.06017666543982 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="hpa" min="0" max="5434" order="cr" />
+      <cols count="12.0" offset="#47c9bc" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="8.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Enable flex fuel spark modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#27c9d4" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel spark modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#27c9d9" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel spark modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#27c9de" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel spark modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#27c9e3" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel spark modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#27c9e8" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel PUT modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#27c9d5" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel PUT modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#27c9da" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel PUT modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#27c9df" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel PUT modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#27c9e4" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel PUT modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#27c9e9" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel lambda modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#27c9d6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel lambda modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#27c9db" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel lambda modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#27c9e0" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel lambda modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#27c9e5" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel lambda modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#27c9ea" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel TQ modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#27c9d7" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel TQ modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#27c9dc" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel TQ modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#27c9e1" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel TQ modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#27c9e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel TQ modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#27c9eb" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel IAT modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#27c9d8" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel IAT modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#27c9dd" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel IAT modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#27c9e2" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel IAT modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#27c9e7" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel IAT modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#27c9ec" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel MPI modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#27c9d9" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel MPI modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#27c9de" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel MPI modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#27c9e3" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel MPI modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#27c9e8" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable flex fuel MPI modifier" type="1" help="" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#27c9ed" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable RAL" type="1" help="" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#27c9fc" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable RAL" type="1" help="" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#27c9fd" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable RAL" type="1" help="" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#27c9fe" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable RAL" type="1" help="" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#27c9ff" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable RAL" type="1" help="" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#27ca00" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable NLS" type="1" help="" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#27ca10" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable NLS" type="1" help="" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#27ca11" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable NLS" type="1" help="" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#27ca12" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable NLS" type="1" help="" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#27ca13" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable NLS" type="1" help="" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#27ca14" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable LC" type="1" help="" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#27ca15" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable LC" type="1" help="" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#27ca16" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable LC" type="1" help="" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#27ca17" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable LC" type="1" help="" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#27ca18" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Enable LC" type="1" help="" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#27ca19" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Disable TC" type="1" help="" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#27ca1a" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Disable TC" type="1" help="" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#27ca1b" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Disable TC" type="1" help="" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#27ca1c" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Disable TC" type="1" help="" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#27ca1d" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Disable TC" type="1" help="" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#27ca1e" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1" order="rc" />
+    </map>
+    <map name="Weight" type="2" help="|X: x" class="Switch Patch|Flex Fuel|Spark">
+      <data offset="#27e1f0" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 128.0" func_val2="(128.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="2" order="rc" />
+      <cols count="8.0" offset="#47e1e0" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 128.0" func_val2="(128.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Weight" type="2" help="|X: x" class="Switch Patch|Flex Fuel|PUT">
+      <data offset="#27e1e8" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 128.0" func_val2="(128.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="2" order="rc" />
+      <cols count="8.0" offset="#47e1e0" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 128.0" func_val2="(128.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Weight" type="2" help="|X: x" class="Switch Patch|Flex Fuel|Lambda">
+      <data offset="#27e1f8" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 128.0" func_val2="(128.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="2" order="rc" />
+      <cols count="8.0" offset="#47e1e0" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 128.0" func_val2="(128.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Weight" type="2" help="|X: x" class="Switch Patch|Flex Fuel|TQ">
+      <data offset="#27e200" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 128.0" func_val2="(128.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="2" order="rc" />
+      <cols count="8.0" offset="#47e1e0" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 128.0" func_val2="(128.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Weight" type="2" help="|X: x" class="Switch Patch|Flex Fuel|IAT">
+      <data offset="#27e210" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 128.0" func_val2="(128.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="2" order="rc" />
+      <cols count="8.0" offset="#47e1e0" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 128.0" func_val2="(128.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Weight" type="2" help="|X: x" class="Switch Patch|Flex Fuel|MPI">
+      <data offset="#27e208" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 128.0" func_val2="(128.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="2" order="rc" />
+      <cols count="8.0" offset="#47e1e0" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 128.0" func_val2="(128.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Modifier" type="3" help="|X: x|Y: y" class="Switch Patch|Flex Fuel|Lambda">
+      <data offset="#27e3f0" storagetype="uint16" func_2val="((1.0 * [x]) - 32768.0) / 1023.999999959999" func_val2="(1023.999999959999 * ([x] / 1.0)) + 32768.0" format="%0.2f" metric="" min="-31.99" max="31.99" order="rc" />
+      <cols count="12.0" offset="#40b1d9" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 0.03125" func_val2="(0.03125 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="8.0" offset="#454026" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 47.18142548596112" func_val2="(47.18142548596112 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Modifier" type="3" help="|X: x|Y: y" class="Switch Patch|Flex Fuel|Spark">
+      <data offset="#27e4b0" storagetype="uint8" func_2val="((1.0 * [x]) - 95.0) / 2.666666666666667" func_val2="(2.666666666666667 * ([x] / 1.0)) + 95.0" format="%0.2f" metric="degree" min="-48" max="47.62" order="rc" />
+      <cols count="16.0" offset="#43c9e4" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="16.0" offset="#43c946" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 23.59071274298056" func_val2="(23.59071274298056 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Modifier" type="3" help="|X: x|Y: y" class="Switch Patch|Flex Fuel|PUT">
+      <data offset="#27e5b0" storagetype="uint16" func_2val="((1.0 * [x]) - 32768.0) / 12.06017666543982" func_val2="(12.06017666543982 * ([x] / 1.0)) + 32768.0" format="%0.2f" metric="hpa" min="-2717" max="2717" order="cr" />
+      <cols count="12.0" offset="#47c9bc" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="8.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="PUT SP RPM Axis" type="1" help="" class="Switch Patch|Map Switching">
+      <data offset="#27c9bc" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="rpm" min="0" max="8160" order="rc" />
+    </map>
+    <map name="PUT SP RPM Axis Header" type="1" help="must be 12" class="Switch Patch|Map Switching">
+      <data offset="#27c9ba" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="8160" order="rc" />
+    </map>
+    <map name="EGT ignition axis" type="1" help="" class="Switch Patch|RAL">
+      <data offset="#27ca04" storagetype="uint16" func_2val="((1.0 * [x]) - 8736.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 8736.0" format="%0.2f" metric="c" min="0" max="1775" order="rc" />
+    </map>
+    <map name="EGT ignition axis Header" type="1" help="must be 4" class="Switch Patch|RAL">
+      <data offset="#27ca02" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1775" order="rc" />
+    </map>
+    <map name="Flex fuel weight axis" type="1" help="" class="Switch Patch|Flex Fuel">
+      <data offset="#27e1e0" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 128.0" func_val2="(128.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="e" min="0" max="2" order="rc" />
+    </map>
+    <map name="Flex fuel weight axis Header" type="1" help="must be 8" class="Switch Patch|Flex Fuel">
+      <data offset="#27e1df" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="8" order="rc" />
+    </map>
+    <map name="Torque Request AT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#266e54" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="9.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request AT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#266fbc" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="9.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request AT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#267124" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="9.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request AT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#26728c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="9.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request AT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#2673f4" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="9.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request AT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#26755c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="9.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request AT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#2676c4" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="9.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request AT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#26782c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="9.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request AT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#267994" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="9.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request AT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#267afc" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="9.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request AT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#267c64" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="9.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request AT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#267dcc" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="9.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request AT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#267f34" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="9.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request AT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#26809c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="9.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request AT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#268204" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="9.0" offset="#40c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request MT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#26881c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="7.0" offset="#40c717" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request MT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 1">
+      <data offset="#268934" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="7.0" offset="#40c717" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request MT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#268a4c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="7.0" offset="#40c717" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request MT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 2">
+      <data offset="#268b64" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="7.0" offset="#40c717" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request MT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#268c7c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="7.0" offset="#40c717" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request MT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 3">
+      <data offset="#268d94" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="7.0" offset="#40c717" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request MT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#268eac" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="7.0" offset="#40c717" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request MT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 4">
+      <data offset="#268fc4" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="7.0" offset="#40c717" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request MT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#2690dc" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="7.0" offset="#40c717" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Torque Request MT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 5">
+      <data offset="#2691f4" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
+      <cols count="20.0" offset="#46605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="7.0" offset="#40c717" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+  </ecu_struct>
+</ecus>
