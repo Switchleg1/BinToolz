@@ -388,17 +388,27 @@
       <data offset="#27e208" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 128.0" func_val2="(128.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="2" order="rc" />
       <cols count="8" offset="#27e1e0" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 128.0" func_val2="(128.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Modifier" type="3" help="|X: x|Y: y" class="Switch Patch|Flex Fuel|Lambda">
+    <map name="Modifier" type="3" help="|X: x|Y: y" class="Switch Patch|Flex Fuel|MPI">
+      <data offset="#27e238" storagetype="uint8" func_2val="((1.0 * [x]) - 128.0) / 128.0" func_val2="(128.0 * ([x] / 1.0)) + 128.0" format="%0.2f" metric="" min="-1" max="1" order="rc" />
+      <cols count="8" offset="#23640e" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="10" offset="#235f74" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 23.59071274298056" func_val2="(23.59071274298056 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Modifier " type="3" help="|X: x|Y: y" class="Switch Patch|Flex Fuel|TQ">
+      <data offset="#27e288" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="1023.97" order="rc" />
+      <cols count="20" offset="#26605c" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+      <rows count="8" offset="#20c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
+    </map>
+    <map name="Modifier  " type="3" help="|X: x|Y: y" class="Switch Patch|Flex Fuel|Lambda">
       <data offset="#27e3f0" storagetype="uint16" func_2val="((1.0 * [x]) - 32768.0) / 1023.999999959999" func_val2="(1023.999999959999 * ([x] / 1.0)) + 32768.0" format="%0.2f" metric="" min="-31.99" max="31.99" order="rc" />
       <cols count="12" offset="#20b1d9" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 0.03125" func_val2="(0.03125 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="8" offset="#254026" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 47.18142548596112" func_val2="(47.18142548596112 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Modifier " type="3" help="|X: x|Y: y" class="Switch Patch|Flex Fuel|Spark">
+    <map name="Modifier   " type="3" help="|X: x|Y: y" class="Switch Patch|Flex Fuel|Spark">
       <data offset="#27e4b0" storagetype="uint8" func_2val="((1.0 * [x]) - 95.0) / 2.666666666666667" func_val2="(2.666666666666667 * ([x] / 1.0)) + 95.0" format="%0.2f" metric="degree" min="-48" max="47.62" order="rc" />
       <cols count="16" offset="#23c9e4" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="16" offset="#23c946" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 23.59071274298056" func_val2="(23.59071274298056 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Modifier  " type="3" help="|X: x|Y: y" class="Switch Patch|Flex Fuel|PUT">
+    <map name="Modifier    " type="3" help="|X: x|Y: y" class="Switch Patch|Flex Fuel|PUT">
       <data offset="#27e5b0" storagetype="uint16" func_2val="((1.0 * [x]) - 32768.0) / 12.06017666543982" func_val2="(12.06017666543982 * ([x] / 1.0)) + 32768.0" format="%0.2f" metric="hpa" min="-2717" max="2717" order="cr" />
       <cols count="12" offset="#27c9bc" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="8" offset="#20c6e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
