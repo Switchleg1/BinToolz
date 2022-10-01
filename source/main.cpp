@@ -130,6 +130,7 @@ void __fastcall TMainForm::ConvertButtonClick(TObject *Sender)
 	addToLog("Converting Ghidra export to full bin.");
 	addToLog("-------------------------------------");
 
+	OpenDialog->Options >> ofAllowMultiSelect;
 	OpenDialog->DefaultExt = ".bin";
 	OpenDialog->Filter = "Bin|*.bin";
 	OpenDialog->Title = "Open Ghidra export";
@@ -252,37 +253,8 @@ cleanup:
 		free(dOutBin);
 }
 //---------------------------------------------------------------------------
-void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
+int __fastcall TMainForm::PatchFunction(AnsiString inFileName, AnsiString patchFileName, AnsiString outFileName)
 {
-	addToLog("");
-	addToLog("One click patch.");
-	addToLog("----------------");
-
-	OpenDialog->DefaultExt = ".bin";
-	OpenDialog->Filter = "Bin|*.bin";
-	if(CreateRadioButton->Checked) OpenDialog->Title = "Open Original Bin";
-	else OpenDialog->Title = "Open bin";
-	if(!OpenDialog->Execute()) {
-		addToLog("User did not select original file.");
-		return;
-	}
-	AnsiString inFileName = OpenDialog->FileName;
-
-	AnsiString fileType = "modified";
-	if(CreateRadioButton->Checked) {
-		OpenDialog->Title = "Open modified bin";
-	} else {
-		OpenDialog->Title = "Open patch";
-		OpenDialog->DefaultExt = ".btp";
-		OpenDialog->Filter = "BinToolz Patch|*.btp";
-		fileType = "patch";
-	}
-	if(!OpenDialog->Execute()) {
-		addToLog("User did not select "+fileType+" file.");
-		return;
-	}
-	AnsiString patchFileName = OpenDialog->FileName;
-
 	int32_t iResult;
 	SimosBIN *dInputBin = NULL, *dPatchBin = NULL;
 
@@ -298,6 +270,7 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 		goto cleanup;
 	}
 	char sw_code[12];
+	memset(sw_code, 0, 12);
 	memcpy(sw_code, dInputBin->softwareCode(), 11);
 	addToLog("Hardware code ["+AnsiString(dInputBin->hardwareType()->name)+"]");
 	addToLog("Software code ["+AnsiString(sw_code)+"]");
@@ -379,16 +352,6 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 		memcpy(&dPatchBin->data()[sizeof(patch_header_t)], blockData, blockSize);
 		free(blockData);
 
-		//write output patch
-		SaveDialog->Title = "Save BinToolz patch";
-		SaveDialog->DefaultExt = ".btp";
-		SaveDialog->Filter = "BinToolz Patch|*.btp";
-		if(!SaveDialog->Execute()) {
-			addToLog("User did not select output file.");
-			goto cleanup;
-		}
-		AnsiString outFileName = SaveDialog->FileName;
-
 		//write output bin
 		iResult = dPatchBin->save((char*)outFileName.c_str());
 		if(iResult) {
@@ -445,12 +408,26 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 
 		//check bin is ready to accept patch
 		unsigned char *block_data_tmp = block_data;
+		bool modifiedCAL = false;
 		for(uint32_t i=0; i<header->block_count; i++) {
 			patch_block_t *block_header = (patch_block_t*)block_data_tmp;
+			hardware_t *hwType = dInputBin->hardwareType();
+			bool isCAL = false;
+
+			if((IgnoreCheckBox->Checked || CheckRadioButton->Checked) &&
+				block_header->offset >= hwType->blocks[4].bin_pos &&
+				block_header->offset + block_header->length <= hwType->blocks[4].bin_pos + hwType->blocks[4].length) {
+				isCAL = true;
+			}
 
 			if(!checkPatchBlock(dInputBin->size(), dInputBin->data(), block_data_tmp, remove_patch)) {
-				addToLog(bin_str);
-				goto cleanup;
+				if(!isCAL) {
+					addToLog(bin_str);
+					iResult = -1;
+					goto cleanup;
+				} else {
+					modifiedCAL = true;
+				}
 			}
 
 			block_data_tmp += sizeof(patch_block_t) + block_header->length * 2;
@@ -458,6 +435,10 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 
 		//check patch succeeded
 		if(CheckRadioButton->Checked) {
+			if(modifiedCAL) {
+				status_str += ", CAL has been modified";
+			}
+
 			addToLog(status_str);
 			goto cleanup;
 		}
@@ -467,8 +448,16 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 		block_data_tmp = block_data;
 		for(uint32_t i=0; i<header->block_count; i++) {
 			patch_block_t *block_header = (patch_block_t*)block_data_tmp;
+			hardware_t *hwType = dInputBin->hardwareType();
+			bool isCAL = false;
 
-			if(!setPatchBlock(dInputBin->size(), dInputBin->data(), block_data_tmp, !remove_patch)) {
+			if(IgnoreCheckBox->Checked &&
+				block_header->offset >= hwType->blocks[4].bin_pos &&
+				block_header->offset + block_header->length <= hwType->blocks[4].bin_pos + hwType->blocks[4].length) {
+				isCAL = true;
+			}
+
+			if(!(IgnoreCheckBox->Checked && isCAL) && !setPatchBlock(dInputBin->size(), dInputBin->data(), block_data_tmp, !remove_patch)) {
 				addToLog("Patch block is invalid");
 				goto cleanup;
 			}
@@ -476,17 +465,6 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 			patchSize += block_header->length;
 			block_data_tmp += sizeof(patch_block_t) + block_header->length * 2;
 		}
-
-		//write output bin
-		SaveDialog->Title = "Save output bin";
-		SaveDialog->DefaultExt = ".bin";
-		SaveDialog->Filter = "Bin|*.bin";
-		SaveDialog->FileName = inFileName;
-		if(!SaveDialog->Execute()) {
-			addToLog("User did not select output file.");
-			return;
-		}
-		AnsiString outFileName = SaveDialog->FileName;
 
 		//write output bin
 		iResult = dInputBin->save((char*)outFileName.c_str());
@@ -499,11 +477,89 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 		addToLog(status_str+IntToStr(patchSize)+"bytes "+IntToStr((int32_t)header->block_count)+"blocks ["+outFileName+"]");
 	}
 
+	iResult = 0;
+
 cleanup:
 	if(dInputBin)
 		free(dInputBin);
 	if(dPatchBin)
 		free(dPatchBin);
+
+	return iResult;
+}
+//---------------------------------------------------------------------------
+void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
+{
+	addToLog("");
+	addToLog("One click patch.");
+	addToLog("----------------");
+
+	OpenDialog->Options >> ofAllowMultiSelect;
+	OpenDialog->DefaultExt = ".bin";
+	OpenDialog->Filter = "Bin|*.bin";
+	if(CreateRadioButton->Checked) OpenDialog->Title = "Open Original Bin";
+	else OpenDialog->Title = "Open bin";
+	if(!OpenDialog->Execute()) {
+		addToLog("User did not select original file.");
+		return;
+	}
+	AnsiString inFileName = OpenDialog->FileName;
+
+	AnsiString fileType = "modified";
+	if(CreateRadioButton->Checked) {
+		OpenDialog->Title = "Open modified bin";
+
+		SaveDialog->Title = "Save BinToolz patch";
+		SaveDialog->DefaultExt = ".btp";
+		SaveDialog->Filter = "BinToolz Patch|*.btp";
+	} else {
+		if(AddRadioButton->Checked) {
+			OpenDialog->Title = "Add patch";
+		} else if(RemoveRadioButton->Checked) {
+			OpenDialog->Title = "Remove patch";
+		} else {
+			OpenDialog->Title = "Check patch";
+		}
+		OpenDialog->Options << ofAllowMultiSelect;
+		OpenDialog->DefaultExt = ".btp";
+		OpenDialog->Filter = "BinToolz Patch|*.btp";
+		fileType = "patch";
+
+		SaveDialog->Title = "Save output bin";
+		SaveDialog->DefaultExt = ".bin";
+		SaveDialog->Filter = "Bin|*.bin";
+	}
+	if(!OpenDialog->Execute()) {
+		addToLog("User did not select "+fileType+" file.");
+		return;
+	}
+
+
+	//get output bin name
+	if(!CheckRadioButton->Checked) {
+		SaveDialog->FileName = inFileName;
+		if(!SaveDialog->Execute()) {
+			addToLog("User did not select output file.");
+			return;
+		}
+	}
+	AnsiString outFileName = SaveDialog->FileName;
+
+	uint8_t operationsSuccess = 0;
+	uint8_t operationsFailed = 0;
+	for(int i=0; i<OpenDialog->Files->Count; i++) {
+		AnsiString patchFileName = OpenDialog->Files->Strings[i];
+		if(PatchFunction(inFileName, patchFileName, outFileName)) {
+			operationsFailed++;
+		} else {
+			operationsSuccess++;
+		}
+		inFileName = outFileName;
+	}
+
+	if(OpenDialog->Files->Count > 1) {
+		addToLog("***Functions Passed ["+IntToStr(operationsSuccess)+"] Failed ["+IntToStr(operationsFailed)+"]***");
+	}
 }
 //---------------------------------------------------------------------------
 void __fastcall TMainForm::CALButtonClick(TObject *Sender)
@@ -515,6 +571,7 @@ void __fastcall TMainForm::CALButtonClick(TObject *Sender)
 	addToLog(funcType+" CAL block.");
 	addToLog("-----------------");
 
+	OpenDialog->Options >> ofAllowMultiSelect;
 	OpenDialog->DefaultExt = ".bin";
 	OpenDialog->Filter = "Bin|*.bin";
 	OpenDialog->Title = "Open FULL bin";

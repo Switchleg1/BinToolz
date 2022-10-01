@@ -24,8 +24,10 @@ uint8_t checkPatchBlock(uint32_t data_len, uint8_t* data_in, uint8_t* data_block
 {
 	uint32_t i;
 	patch_block_t *header = (patch_block_t*)data_block;
+
 	if(header->offset+header->length > data_len)
 		return FALSE;
+
 	data_block += sizeof(patch_block_t) + (removing*header->length);
 	data_in += header->offset;
 	for(i=0; i<header->length; i++) {
@@ -39,8 +41,10 @@ uint8_t setPatchBlock(uint32_t data_len, uint8_t* data_in, uint8_t* data_block, 
 {
 	uint32_t i;
 	patch_block_t *header = (patch_block_t*)data_block;
+
 	if(header->offset+header->length > data_len)
 		return FALSE;
+
 	data_block += sizeof(patch_block_t) + (adding*header->length);
 	data_in += header->offset;
 	for(i=0; i<header->length; i++) {

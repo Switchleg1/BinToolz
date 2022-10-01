@@ -37,6 +37,7 @@ __published:	// IDE-managed Components
 	TRadioButton *CheckRadioButton;
 	TRadioButton *ImportRadioButton;
 	TRadioButton *ExportRadioButton;
+	TCheckBox *IgnoreCheckBox;
 	void __fastcall ConvertButtonClick(TObject *Sender);
 	void __fastcall PatchButtonClick(TObject *Sender);
 	void __fastcall CALButtonClick(TObject *Sender);
@@ -44,6 +45,7 @@ __published:	// IDE-managed Components
 	void __fastcall fileResult(int8_t result, AnsiString fileName);
 	void __fastcall LogListBoxDblClick(TObject *Sender);
 private:	// User declarations
+	int __fastcall PatchFunction(AnsiString inFileName, AnsiString patchFileName, AnsiString outFileName);
 public:		// User declarations
 	__fastcall TMainForm(TComponent* Owner);
 	__fastcall ~TMainForm();
