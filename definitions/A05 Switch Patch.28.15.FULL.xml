@@ -431,127 +431,127 @@
     <map name="Flex fuel weight axis Header" type="1" help="must be 8" class="Switch Patch|Flex Fuel">
       <data offset="#2b1fff" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" min="0" max="8" order="rc" />
     </map>
-    <map name="Torque Request AT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 1">
+    <map name="Torque Request AT Type 1" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 1">
       <data offset="#295f9a" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="9" offset="#22d8e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request AT " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 1">
+    <map name="Torque Request AT Type 2" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 1">
       <data offset="#296102" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="9" offset="#22d8e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request AT  " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 1">
+    <map name="Torque Request AT Type 3" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 1">
       <data offset="#29626a" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="9" offset="#22d8e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request AT   " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 2">
+    <map name="Torque Request AT Type 1 " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 2">
       <data offset="#2963d2" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="9" offset="#22d8e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request AT    " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 2">
+    <map name="Torque Request AT Type 2 " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 2">
       <data offset="#29653a" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="9" offset="#22d8e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request AT     " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 2">
+    <map name="Torque Request AT Type 3 " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 2">
       <data offset="#2966a2" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="9" offset="#22d8e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request AT      " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 3">
+    <map name="Torque Request AT Type 1  " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 3">
       <data offset="#29680a" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="9" offset="#22d8e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request AT       " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 3">
+    <map name="Torque Request AT Type 2  " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 3">
       <data offset="#296972" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="9" offset="#22d8e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request AT        " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 3">
+    <map name="Torque Request AT Type 3  " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 3">
       <data offset="#296ada" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="9" offset="#22d8e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request AT         " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 4">
+    <map name="Torque Request AT Type 1   " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 4">
       <data offset="#296c42" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="9" offset="#22d8e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request AT          " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 4">
+    <map name="Torque Request AT Type 2   " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 4">
       <data offset="#296daa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="9" offset="#22d8e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request AT           " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 4">
+    <map name="Torque Request AT Type 3   " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 4">
       <data offset="#296f12" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="9" offset="#22d8e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request AT            " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 5">
+    <map name="Torque Request AT Type 1    " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 5">
       <data offset="#29707a" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="9" offset="#22d8e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request AT             " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 5">
+    <map name="Torque Request AT Type 2    " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 5">
       <data offset="#2971e2" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="9" offset="#22d8e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request AT              " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 5">
+    <map name="Torque Request AT Type 3    " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 5">
       <data offset="#29734a" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="9" offset="#22d8e6" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request MT" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 1">
+    <map name="Torque Request MT Type 1" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 1">
       <data offset="#297962" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="7" offset="#22d917" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request MT " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 1">
+    <map name="Torque Request MT Type 2" type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 1">
       <data offset="#297a7a" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="7" offset="#22d917" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request MT  " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 2">
+    <map name="Torque Request MT Type 1 " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 2">
       <data offset="#297b92" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="7" offset="#22d917" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request MT   " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 2">
+    <map name="Torque Request MT Type 2 " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 2">
       <data offset="#297caa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="7" offset="#22d917" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request MT    " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 3">
+    <map name="Torque Request MT Type 1  " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 3">
       <data offset="#297dc2" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="7" offset="#22d917" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request MT     " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 3">
+    <map name="Torque Request MT Type 2  " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 3">
       <data offset="#297eda" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="7" offset="#22d917" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request MT      " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 4">
+    <map name="Torque Request MT Type 1   " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 4">
       <data offset="#297ff2" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="7" offset="#22d917" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request MT       " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 4">
+    <map name="Torque Request MT Type 2   " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 4">
       <data offset="#29810a" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="7" offset="#22d917" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request MT        " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 5">
+    <map name="Torque Request MT Type 1    " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 5">
       <data offset="#298222" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="7" offset="#22d917" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
     </map>
-    <map name="Torque Request MT         " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 5">
+    <map name="Torque Request MT Type 2    " type="3" help="|X: x|Y: y" class="Switch Patch|Map Switching|Map Slot 5">
       <data offset="#29833a" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 32.0" func_val2="(32.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="nm" min="0" max="1024" order="rc" />
       <cols count="20" offset="#2950fa" storagetype="uint16" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />
       <rows count="7" offset="#22d917" storagetype="uint8" func_2val="((1.0 * [x]) - 0.0) / 1.0" func_val2="(1.0 * ([x] / 1.0)) + 0.0" format="%0.2f" metric="" />

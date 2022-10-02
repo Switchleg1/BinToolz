@@ -641,12 +641,12 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7d82c" flags="0x30">
     <title>EGT ignition table</title>
-    <description />
+    <description>|X: x</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="179" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d824" mmedelementsizebits="16" mmedcolcount="4.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>4.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d824" mmedelementsizebits="16" mmedcolcount="4" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>4</indexcount>
       <min />
       <max />
       <units />
@@ -666,8 +666,8 @@
       <LABEL index="0" value="-" />
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7d82c" mmedelementsizebits="8" mmedcolcount="4.0" mmedrowcount="1" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>4.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7d82c" mmedelementsizebits="8" mmedcolcount="4" mmedrowcount="1" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>4</indexcount>
       <min>-35.62</min>
       <max>60</max>
       <units>degree</units>
@@ -1703,13 +1703,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7cb5a" flags="0x30">
     <title>Lambda modifier</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="184" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xb2e1" mmedelementsizebits="8" mmedcolcount="12.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xb2e1" mmedelementsizebits="8" mmedcolcount="12" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min />
       <max />
       <units />
@@ -1720,8 +1720,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x54700" mmedelementsizebits="16" mmedcolcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x54700" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -1732,8 +1732,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7cb5a" mmedelementsizebits="16" mmedcolcount="12.0" mmedrowcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7cb5a" mmedelementsizebits="16" mmedcolcount="12" mmedrowcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min>-31.99</min>
       <max>31.99</max>
       <units />
@@ -1746,13 +1746,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7cc1a" flags="0x30">
     <title>Lambda modifier</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="185" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xb2e1" mmedelementsizebits="8" mmedcolcount="12.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xb2e1" mmedelementsizebits="8" mmedcolcount="12" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min />
       <max />
       <units />
@@ -1763,8 +1763,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x54700" mmedelementsizebits="16" mmedcolcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x54700" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -1775,8 +1775,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7cc1a" mmedelementsizebits="16" mmedcolcount="12.0" mmedrowcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7cc1a" mmedelementsizebits="16" mmedcolcount="12" mmedrowcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min>-31.99</min>
       <max>31.99</max>
       <units />
@@ -1789,13 +1789,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7ccda" flags="0x30">
     <title>Lambda modifier</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="186" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xb2e1" mmedelementsizebits="8" mmedcolcount="12.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xb2e1" mmedelementsizebits="8" mmedcolcount="12" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min />
       <max />
       <units />
@@ -1806,8 +1806,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x54700" mmedelementsizebits="16" mmedcolcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x54700" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -1818,8 +1818,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7ccda" mmedelementsizebits="16" mmedcolcount="12.0" mmedrowcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7ccda" mmedelementsizebits="16" mmedcolcount="12" mmedrowcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min>-31.99</min>
       <max>31.99</max>
       <units />
@@ -1832,13 +1832,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7cd9a" flags="0x30">
     <title>Lambda modifier</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="187" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xb2e1" mmedelementsizebits="8" mmedcolcount="12.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xb2e1" mmedelementsizebits="8" mmedcolcount="12" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min />
       <max />
       <units />
@@ -1849,8 +1849,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x54700" mmedelementsizebits="16" mmedcolcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x54700" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -1861,8 +1861,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7cd9a" mmedelementsizebits="16" mmedcolcount="12.0" mmedrowcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7cd9a" mmedelementsizebits="16" mmedcolcount="12" mmedrowcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min>-31.99</min>
       <max>31.99</max>
       <units />
@@ -1875,13 +1875,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7ce5a" flags="0x30">
     <title>Lambda modifier</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="188" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xb2e1" mmedelementsizebits="8" mmedcolcount="12.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xb2e1" mmedelementsizebits="8" mmedcolcount="12" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min />
       <max />
       <units />
@@ -1892,8 +1892,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x54700" mmedelementsizebits="16" mmedcolcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x54700" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -1904,8 +1904,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7ce5a" mmedelementsizebits="16" mmedcolcount="12.0" mmedrowcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7ce5a" mmedelementsizebits="16" mmedcolcount="12" mmedrowcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min>-31.99</min>
       <max>31.99</max>
       <units />
@@ -1918,13 +1918,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7cf1a" flags="0x30">
     <title>Spark modifier</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="184" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3ce5a" mmedelementsizebits="16" mmedcolcount="16.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>16.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3ce5a" mmedelementsizebits="16" mmedcolcount="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>16</indexcount>
       <min />
       <max />
       <units />
@@ -1935,8 +1935,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3cdbc" mmedelementsizebits="16" mmedcolcount="16.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>16.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3cdbc" mmedelementsizebits="16" mmedcolcount="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>16</indexcount>
       <min />
       <max />
       <units />
@@ -1947,8 +1947,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7cf1a" mmedelementsizebits="8" mmedcolcount="16.0" mmedrowcount="16.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>16.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7cf1a" mmedelementsizebits="8" mmedcolcount="16" mmedrowcount="16" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>16</indexcount>
       <min>-35.62</min>
       <max>60</max>
       <units>degree</units>
@@ -1961,13 +1961,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7d01a" flags="0x30">
     <title>Spark modifier</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="185" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3ce5a" mmedelementsizebits="16" mmedcolcount="16.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>16.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3ce5a" mmedelementsizebits="16" mmedcolcount="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>16</indexcount>
       <min />
       <max />
       <units />
@@ -1978,8 +1978,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3cdbc" mmedelementsizebits="16" mmedcolcount="16.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>16.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3cdbc" mmedelementsizebits="16" mmedcolcount="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>16</indexcount>
       <min />
       <max />
       <units />
@@ -1990,8 +1990,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7d01a" mmedelementsizebits="8" mmedcolcount="16.0" mmedrowcount="16.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>16.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7d01a" mmedelementsizebits="8" mmedcolcount="16" mmedrowcount="16" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>16</indexcount>
       <min>-35.62</min>
       <max>60</max>
       <units>degree</units>
@@ -2004,13 +2004,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7d11a" flags="0x30">
     <title>Spark modifier</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="186" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3ce5a" mmedelementsizebits="16" mmedcolcount="16.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>16.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3ce5a" mmedelementsizebits="16" mmedcolcount="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>16</indexcount>
       <min />
       <max />
       <units />
@@ -2021,8 +2021,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3cdbc" mmedelementsizebits="16" mmedcolcount="16.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>16.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3cdbc" mmedelementsizebits="16" mmedcolcount="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>16</indexcount>
       <min />
       <max />
       <units />
@@ -2033,8 +2033,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7d11a" mmedelementsizebits="8" mmedcolcount="16.0" mmedrowcount="16.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>16.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7d11a" mmedelementsizebits="8" mmedcolcount="16" mmedrowcount="16" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>16</indexcount>
       <min>-35.62</min>
       <max>60</max>
       <units>degree</units>
@@ -2047,13 +2047,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7d21a" flags="0x30">
     <title>Spark modifier</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="187" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3ce5a" mmedelementsizebits="16" mmedcolcount="16.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>16.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3ce5a" mmedelementsizebits="16" mmedcolcount="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>16</indexcount>
       <min />
       <max />
       <units />
@@ -2064,8 +2064,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3cdbc" mmedelementsizebits="16" mmedcolcount="16.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>16.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3cdbc" mmedelementsizebits="16" mmedcolcount="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>16</indexcount>
       <min />
       <max />
       <units />
@@ -2076,8 +2076,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7d21a" mmedelementsizebits="8" mmedcolcount="16.0" mmedrowcount="16.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>16.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7d21a" mmedelementsizebits="8" mmedcolcount="16" mmedrowcount="16" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>16</indexcount>
       <min>-35.62</min>
       <max>60</max>
       <units>degree</units>
@@ -2090,13 +2090,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7d31a" flags="0x30">
     <title>Spark modifier</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="188" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3ce5a" mmedelementsizebits="16" mmedcolcount="16.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>16.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3ce5a" mmedelementsizebits="16" mmedcolcount="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>16</indexcount>
       <min />
       <max />
       <units />
@@ -2107,8 +2107,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3cdbc" mmedelementsizebits="16" mmedcolcount="16.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>16.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3cdbc" mmedelementsizebits="16" mmedcolcount="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>16</indexcount>
       <min />
       <max />
       <units />
@@ -2119,8 +2119,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7d31a" mmedelementsizebits="8" mmedcolcount="16.0" mmedrowcount="16.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>16.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7d31a" mmedelementsizebits="8" mmedcolcount="16" mmedrowcount="16" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>16</indexcount>
       <min>-35.62</min>
       <max>60</max>
       <units>degree</units>
@@ -2133,13 +2133,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7d41a" flags="0x30">
     <title>PUT setpoint</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="184" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d7dc" mmedelementsizebits="16" mmedcolcount="12.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d7dc" mmedelementsizebits="16" mmedcolcount="12" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min />
       <max />
       <units />
@@ -2150,8 +2150,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="8.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -2162,8 +2162,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d41a" mmedelementsizebits="16" mmedcolcount="12.0" mmedrowcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d41a" mmedelementsizebits="16" mmedcolcount="12" mmedrowcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min>0</min>
       <max>5434</max>
       <units>hpa</units>
@@ -2176,13 +2176,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7d4da" flags="0x30">
     <title>PUT setpoint</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="185" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d7dc" mmedelementsizebits="16" mmedcolcount="12.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d7dc" mmedelementsizebits="16" mmedcolcount="12" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min />
       <max />
       <units />
@@ -2193,8 +2193,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="8.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -2205,8 +2205,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d4da" mmedelementsizebits="16" mmedcolcount="12.0" mmedrowcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d4da" mmedelementsizebits="16" mmedcolcount="12" mmedrowcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min>0</min>
       <max>5434</max>
       <units>hpa</units>
@@ -2219,13 +2219,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7d59a" flags="0x30">
     <title>PUT setpoint</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="186" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d7dc" mmedelementsizebits="16" mmedcolcount="12.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d7dc" mmedelementsizebits="16" mmedcolcount="12" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min />
       <max />
       <units />
@@ -2236,8 +2236,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="8.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -2248,8 +2248,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d59a" mmedelementsizebits="16" mmedcolcount="12.0" mmedrowcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d59a" mmedelementsizebits="16" mmedcolcount="12" mmedrowcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min>0</min>
       <max>5434</max>
       <units>hpa</units>
@@ -2262,13 +2262,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7d65a" flags="0x30">
     <title>PUT setpoint</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="187" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d7dc" mmedelementsizebits="16" mmedcolcount="12.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d7dc" mmedelementsizebits="16" mmedcolcount="12" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min />
       <max />
       <units />
@@ -2279,8 +2279,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="8.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -2291,8 +2291,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d65a" mmedelementsizebits="16" mmedcolcount="12.0" mmedrowcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d65a" mmedelementsizebits="16" mmedcolcount="12" mmedrowcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min>0</min>
       <max>5434</max>
       <units>hpa</units>
@@ -2305,13 +2305,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7d71a" flags="0x30">
     <title>PUT setpoint</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="188" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d7dc" mmedelementsizebits="16" mmedcolcount="12.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d7dc" mmedelementsizebits="16" mmedcolcount="12" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min />
       <max />
       <units />
@@ -2322,8 +2322,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="8.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -2334,8 +2334,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d71a" mmedelementsizebits="16" mmedcolcount="12.0" mmedrowcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d71a" mmedelementsizebits="16" mmedcolcount="12" mmedrowcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min>0</min>
       <max>5434</max>
       <units>hpa</units>
@@ -4198,13 +4198,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7f010" flags="0x30">
     <title>Weight</title>
-    <description />
+    <description>|X: x</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="189" />
     <CATEGORYMEM index="2" category="190" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7f000" mmedelementsizebits="8" mmedcolcount="8.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7f000" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -4224,8 +4224,8 @@
       <LABEL index="0" value="-" />
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f010" mmedelementsizebits="8" mmedcolcount="8.0" mmedrowcount="1" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f010" mmedelementsizebits="8" mmedcolcount="8" mmedrowcount="1" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min>0</min>
       <max>2</max>
       <units />
@@ -4238,13 +4238,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7f008" flags="0x30">
     <title>Weight</title>
-    <description />
+    <description>|X: x</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="189" />
     <CATEGORYMEM index="2" category="191" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7f000" mmedelementsizebits="8" mmedcolcount="8.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7f000" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -4264,8 +4264,8 @@
       <LABEL index="0" value="-" />
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f008" mmedelementsizebits="8" mmedcolcount="8.0" mmedrowcount="1" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f008" mmedelementsizebits="8" mmedcolcount="8" mmedrowcount="1" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min>0</min>
       <max>2</max>
       <units />
@@ -4278,13 +4278,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7f018" flags="0x30">
     <title>Weight</title>
-    <description />
+    <description>|X: x</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="189" />
     <CATEGORYMEM index="2" category="192" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7f000" mmedelementsizebits="8" mmedcolcount="8.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7f000" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -4304,8 +4304,8 @@
       <LABEL index="0" value="-" />
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f018" mmedelementsizebits="8" mmedcolcount="8.0" mmedrowcount="1" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f018" mmedelementsizebits="8" mmedcolcount="8" mmedrowcount="1" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min>0</min>
       <max>2</max>
       <units />
@@ -4318,13 +4318,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7f020" flags="0x30">
     <title>Weight</title>
-    <description />
+    <description>|X: x</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="189" />
     <CATEGORYMEM index="2" category="193" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7f000" mmedelementsizebits="8" mmedcolcount="8.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7f000" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -4344,8 +4344,8 @@
       <LABEL index="0" value="-" />
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f020" mmedelementsizebits="8" mmedcolcount="8.0" mmedrowcount="1" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f020" mmedelementsizebits="8" mmedcolcount="8" mmedrowcount="1" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min>0</min>
       <max>2</max>
       <units />
@@ -4358,13 +4358,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7f030" flags="0x30">
     <title>Weight</title>
-    <description />
+    <description>|X: x</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="189" />
     <CATEGORYMEM index="2" category="194" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7f000" mmedelementsizebits="8" mmedcolcount="8.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7f000" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -4384,8 +4384,8 @@
       <LABEL index="0" value="-" />
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f030" mmedelementsizebits="8" mmedcolcount="8.0" mmedrowcount="1" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f030" mmedelementsizebits="8" mmedcolcount="8" mmedrowcount="1" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min>0</min>
       <max>2</max>
       <units />
@@ -4398,13 +4398,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7f028" flags="0x30">
     <title>Weight</title>
-    <description />
+    <description>|X: x</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="189" />
     <CATEGORYMEM index="2" category="195" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7f000" mmedelementsizebits="8" mmedcolcount="8.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7f000" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -4424,8 +4424,8 @@
       <LABEL index="0" value="-" />
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f028" mmedelementsizebits="8" mmedcolcount="8.0" mmedrowcount="1" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f028" mmedelementsizebits="8" mmedcolcount="8" mmedrowcount="1" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min>0</min>
       <max>2</max>
       <units />
@@ -4438,13 +4438,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7f058" flags="0x30">
     <title>Modifier</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="189" />
     <CATEGORYMEM index="2" category="195" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x36884" mmedelementsizebits="16" mmedcolcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x36884" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -4455,8 +4455,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x363ea" mmedelementsizebits="16" mmedcolcount="10.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>10.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x363ea" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>10</indexcount>
       <min />
       <max />
       <units />
@@ -4467,8 +4467,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f058" mmedelementsizebits="8" mmedcolcount="8.0" mmedrowcount="10.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f058" mmedelementsizebits="8" mmedcolcount="8" mmedrowcount="10" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min>-1</min>
       <max>1</max>
       <units />
@@ -4481,13 +4481,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7f0a8" flags="0x30">
     <title>Modifier</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="189" />
     <CATEGORYMEM index="2" category="193" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -4498,8 +4498,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="8.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -4510,8 +4510,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f0a8" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f0a8" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1023.97</max>
       <units />
@@ -4524,13 +4524,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7f210" flags="0x30">
     <title>Modifier</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="189" />
     <CATEGORYMEM index="2" category="192" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xb2e1" mmedelementsizebits="8" mmedcolcount="12.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xb2e1" mmedelementsizebits="8" mmedcolcount="12" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min />
       <max />
       <units />
@@ -4541,8 +4541,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x54700" mmedelementsizebits="16" mmedcolcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x54700" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -4553,8 +4553,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f210" mmedelementsizebits="16" mmedcolcount="12.0" mmedrowcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f210" mmedelementsizebits="16" mmedcolcount="12" mmedrowcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min>-31.99</min>
       <max>31.99</max>
       <units />
@@ -4567,13 +4567,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7f2d0" flags="0x30">
     <title>Modifier</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="189" />
     <CATEGORYMEM index="2" category="190" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3ce5a" mmedelementsizebits="16" mmedcolcount="16.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>16.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3ce5a" mmedelementsizebits="16" mmedcolcount="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>16</indexcount>
       <min />
       <max />
       <units />
@@ -4584,8 +4584,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3cdbc" mmedelementsizebits="16" mmedcolcount="16.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>16.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x3cdbc" mmedelementsizebits="16" mmedcolcount="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>16</indexcount>
       <min />
       <max />
       <units />
@@ -4596,8 +4596,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f2d0" mmedelementsizebits="8" mmedcolcount="16.0" mmedrowcount="16.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>16.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f2d0" mmedelementsizebits="8" mmedcolcount="16" mmedrowcount="16" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>16</indexcount>
       <min>-48</min>
       <max>47.62</max>
       <units>degree</units>
@@ -4610,13 +4610,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x7f3d0" flags="0x30">
     <title>Modifier</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="189" />
     <CATEGORYMEM index="2" category="191" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d7dc" mmedelementsizebits="16" mmedcolcount="12.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7d7dc" mmedelementsizebits="16" mmedcolcount="12" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min />
       <max />
       <units />
@@ -4627,8 +4627,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="8.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>8.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>8</indexcount>
       <min />
       <max />
       <units />
@@ -4639,8 +4639,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7f3d0" mmedelementsizebits="16" mmedcolcount="12.0" mmedrowcount="8.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>12.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x7f3d0" mmedelementsizebits="16" mmedcolcount="12" mmedrowcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>12</indexcount>
       <min>-2717</min>
       <max>2717</max>
       <units>hpa</units>
@@ -4890,13 +4890,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x67886" flags="0x30">
     <title>Torque Request AT Type 1</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="184" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -4907,8 +4907,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>9.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>9</indexcount>
       <min />
       <max />
       <units />
@@ -4919,8 +4919,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x67886" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="9.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x67886" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -4933,13 +4933,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x679ee" flags="0x30">
     <title>Torque Request AT Type 2</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="184" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -4950,8 +4950,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>9.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>9</indexcount>
       <min />
       <max />
       <units />
@@ -4962,8 +4962,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x679ee" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="9.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x679ee" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -4976,13 +4976,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x67b56" flags="0x30">
     <title>Torque Request AT Type 3</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="184" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -4993,8 +4993,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>9.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>9</indexcount>
       <min />
       <max />
       <units />
@@ -5005,8 +5005,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x67b56" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="9.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x67b56" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5019,13 +5019,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x67cbe" flags="0x30">
     <title>Torque Request AT Type 1</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="185" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5036,8 +5036,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>9.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>9</indexcount>
       <min />
       <max />
       <units />
@@ -5048,8 +5048,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x67cbe" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="9.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x67cbe" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5062,13 +5062,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x67e26" flags="0x30">
     <title>Torque Request AT Type 2</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="185" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5079,8 +5079,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>9.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>9</indexcount>
       <min />
       <max />
       <units />
@@ -5091,8 +5091,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x67e26" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="9.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x67e26" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5105,13 +5105,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x67f8e" flags="0x30">
     <title>Torque Request AT Type 3</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="185" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5122,8 +5122,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>9.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>9</indexcount>
       <min />
       <max />
       <units />
@@ -5134,8 +5134,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x67f8e" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="9.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x67f8e" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5148,13 +5148,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x680f6" flags="0x30">
     <title>Torque Request AT Type 1</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="186" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5165,8 +5165,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>9.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>9</indexcount>
       <min />
       <max />
       <units />
@@ -5177,8 +5177,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x680f6" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="9.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x680f6" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5191,13 +5191,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x6825e" flags="0x30">
     <title>Torque Request AT Type 2</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="186" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5208,8 +5208,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>9.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>9</indexcount>
       <min />
       <max />
       <units />
@@ -5220,8 +5220,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x6825e" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="9.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x6825e" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5234,13 +5234,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x683c6" flags="0x30">
     <title>Torque Request AT Type 3</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="186" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5251,8 +5251,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>9.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>9</indexcount>
       <min />
       <max />
       <units />
@@ -5263,8 +5263,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x683c6" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="9.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x683c6" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5277,13 +5277,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x6852e" flags="0x30">
     <title>Torque Request AT Type 1</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="187" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5294,8 +5294,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>9.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>9</indexcount>
       <min />
       <max />
       <units />
@@ -5306,8 +5306,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x6852e" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="9.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x6852e" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5320,13 +5320,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x68696" flags="0x30">
     <title>Torque Request AT Type 2</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="187" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5337,8 +5337,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>9.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>9</indexcount>
       <min />
       <max />
       <units />
@@ -5349,8 +5349,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x68696" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="9.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x68696" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5363,13 +5363,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x687fe" flags="0x30">
     <title>Torque Request AT Type 3</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="187" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5380,8 +5380,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>9.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>9</indexcount>
       <min />
       <max />
       <units />
@@ -5392,8 +5392,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x687fe" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="9.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x687fe" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5406,13 +5406,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x68966" flags="0x30">
     <title>Torque Request AT Type 1</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="188" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5423,8 +5423,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>9.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>9</indexcount>
       <min />
       <max />
       <units />
@@ -5435,8 +5435,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x68966" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="9.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x68966" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5449,13 +5449,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x68ace" flags="0x30">
     <title>Torque Request AT Type 2</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="188" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5466,8 +5466,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>9.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>9</indexcount>
       <min />
       <max />
       <units />
@@ -5478,8 +5478,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x68ace" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="9.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x68ace" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5492,13 +5492,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x68c36" flags="0x30">
     <title>Torque Request AT Type 3</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="188" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5509,8 +5509,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>9.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc836" mmedelementsizebits="8" mmedcolcount="9" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>9</indexcount>
       <min />
       <max />
       <units />
@@ -5521,8 +5521,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x68c36" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="9.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x68c36" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5535,13 +5535,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x6924e" flags="0x30">
     <title>Torque Request MT Type 1</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="184" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5552,8 +5552,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>7.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>7</indexcount>
       <min />
       <max />
       <units />
@@ -5564,8 +5564,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x6924e" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="7.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x6924e" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="7" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5578,13 +5578,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x69366" flags="0x30">
     <title>Torque Request MT Type 2</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="184" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5595,8 +5595,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>7.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>7</indexcount>
       <min />
       <max />
       <units />
@@ -5607,8 +5607,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x69366" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="7.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x69366" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="7" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5621,13 +5621,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x6947e" flags="0x30">
     <title>Torque Request MT Type 1</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="185" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5638,8 +5638,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>7.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>7</indexcount>
       <min />
       <max />
       <units />
@@ -5650,8 +5650,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x6947e" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="7.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x6947e" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="7" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5664,13 +5664,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x69596" flags="0x30">
     <title>Torque Request MT Type 2</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="185" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5681,8 +5681,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>7.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>7</indexcount>
       <min />
       <max />
       <units />
@@ -5693,8 +5693,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x69596" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="7.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x69596" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="7" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5707,13 +5707,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x696ae" flags="0x30">
     <title>Torque Request MT Type 1</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="186" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5724,8 +5724,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>7.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>7</indexcount>
       <min />
       <max />
       <units />
@@ -5736,8 +5736,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x696ae" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="7.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x696ae" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="7" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5750,13 +5750,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x697c6" flags="0x30">
     <title>Torque Request MT Type 2</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="186" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5767,8 +5767,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>7.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>7</indexcount>
       <min />
       <max />
       <units />
@@ -5779,8 +5779,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x697c6" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="7.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x697c6" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="7" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5793,13 +5793,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x698de" flags="0x30">
     <title>Torque Request MT Type 1</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="187" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5810,8 +5810,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>7.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>7</indexcount>
       <min />
       <max />
       <units />
@@ -5822,8 +5822,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x698de" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="7.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x698de" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="7" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5836,13 +5836,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x699f6" flags="0x30">
     <title>Torque Request MT Type 2</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="187" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5853,8 +5853,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>7.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>7</indexcount>
       <min />
       <max />
       <units />
@@ -5865,8 +5865,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x699f6" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="7.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x699f6" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="7" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5879,13 +5879,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x69b0e" flags="0x30">
     <title>Torque Request MT Type 1</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="188" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5896,8 +5896,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>7.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>7</indexcount>
       <min />
       <max />
       <units />
@@ -5908,8 +5908,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x69b0e" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="7.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x69b0e" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="7" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
@@ -5922,13 +5922,13 @@
   </XDFTABLE>
   <XDFTABLE uniqueid="0x69c26" flags="0x30">
     <title>Torque Request MT Type 2</title>
-    <description />
+    <description>|X: x|Y: y</description>
     <CATEGORYMEM index="0" category="177" />
     <CATEGORYMEM index="1" category="181" />
     <CATEGORYMEM index="2" category="188" />
     <XDFAXIS uniqueid="0x0" id="x">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0x66976" mmedelementsizebits="16" mmedcolcount="20" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min />
       <max />
       <units />
@@ -5939,8 +5939,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="y">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7.0" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <indexcount>7.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedaddress="0xc867" mmedelementsizebits="8" mmedcolcount="7" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <indexcount>7</indexcount>
       <min />
       <max />
       <units />
@@ -5951,8 +5951,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x69c26" mmedelementsizebits="16" mmedcolcount="20.0" mmedrowcount="7.0" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>20.0</indexcount>
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x69c26" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="7" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>20</indexcount>
       <min>0</min>
       <max>1024</max>
       <units>nm</units>
