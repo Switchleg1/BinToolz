@@ -194,7 +194,7 @@ hardware_t* SimosBIN::hardwareType()
 		} else if(iSize == simosHW[i].blocks[4].length) {
         	int8_t box_code[12];
 			memset(box_code, 0, 12);
-			memcpy(box_code, &pData[simosHW[i].box_code_start-simosHW[i].blocks[4].length], 11);
+			memcpy(box_code, &pData[simosHW[i].box_code_start-simosHW[i].blocks[4].bin_pos], 11);
 			if(strlen(box_code) != 0)
 				return &simosHW[i];
 		} else if(iSize == simosHW[i].ghidra_size) {

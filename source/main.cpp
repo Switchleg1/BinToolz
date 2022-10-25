@@ -214,8 +214,11 @@ void __fastcall TMainForm::ConvertButtonClick(TObject *Sender)
 				case -1:
 					addToLog("Invalid CAL bin type ["+fileCALName+"]");
 					goto cleanup;
-				case -2:
-					addToLog("BIN hardware types do not match");
+				case -2: {
+						AnsiString calHWName = dCALBin->hardwareType() ? AnsiString(dCALBin->hardwareType()->name) : AnsiString("None");
+						addToLog("BIN hardware types do not match ["+AnsiString(dInputBin->hardwareType()->name)+":"+calHWName+"]");
+						goto cleanup;
+					}
 					goto cleanup;
 				case -3:
 					addToLog("Invalid input bin ["+inFileName+"]");
@@ -620,7 +623,7 @@ void __fastcall TMainForm::CALButtonClick(TObject *Sender)
 		goto cleanup;
 	}
 
-    //do specified function
+	//do specified function
 	if(ImportRadioButton->Checked) { //Import CAL
 		//open CAL bin
 		dCALBin = new SimosBIN();
@@ -644,9 +647,11 @@ void __fastcall TMainForm::CALButtonClick(TObject *Sender)
 			case -1:
 				addToLog("Invalid CAL bin type ["+fileCALName+"]");
 				goto cleanup;
-			case -2:
-				addToLog("BIN hardware types do not match");
-				goto cleanup;
+			case -2: {
+					AnsiString calHWName = dCALBin->hardwareType() ? AnsiString(dCALBin->hardwareType()->name) : AnsiString("None");
+					addToLog("BIN hardware types do not match ["+AnsiString(dInputBin->hardwareType()->name)+":"+calHWName+"]");
+					goto cleanup;
+				}
 			case -3:
 				addToLog("Invalid input bin ["+inFileName+"]");
 				goto cleanup;
