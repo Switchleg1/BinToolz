@@ -417,7 +417,7 @@ int __fastcall TMainForm::PatchFunction(AnsiString inFileName, AnsiString patchF
 			hardware_t *hwType = dInputBin->hardwareType();
 			bool isCAL = false;
 
-			if((IgnoreCheckBox->Checked || CheckRadioButton->Checked) &&
+			if((IgnoreRadioButton->Checked  || ForceRadioButton->Checked || CheckRadioButton->Checked) &&
 				block_header->offset >= hwType->blocks[4].bin_pos &&
 				block_header->offset + block_header->length <= hwType->blocks[4].bin_pos + hwType->blocks[4].length) {
 				isCAL = true;
@@ -454,13 +454,13 @@ int __fastcall TMainForm::PatchFunction(AnsiString inFileName, AnsiString patchF
 			hardware_t *hwType = dInputBin->hardwareType();
 			bool isCAL = false;
 
-			if(IgnoreCheckBox->Checked &&
+			if(IgnoreRadioButton->Checked &&
 				block_header->offset >= hwType->blocks[4].bin_pos &&
 				block_header->offset + block_header->length <= hwType->blocks[4].bin_pos + hwType->blocks[4].length) {
 				isCAL = true;
 			}
 
-			if(!(IgnoreCheckBox->Checked && isCAL) && !setPatchBlock(dInputBin->size(), dInputBin->data(), block_data_tmp, !remove_patch)) {
+			if(!isCAL && !setPatchBlock(dInputBin->size(), dInputBin->data(), block_data_tmp, !remove_patch)) {
 				addToLog("Patch block is invalid");
 				goto cleanup;
 			}
@@ -537,7 +537,6 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 		return;
 	}
 
-
 	//get output bin name
 	if(!CheckRadioButton->Checked) {
 		SaveDialog->FileName = inFileName;
@@ -557,7 +556,10 @@ void __fastcall TMainForm::PatchButtonClick(TObject *Sender)
 		} else {
 			operationsSuccess++;
 		}
-		inFileName = outFileName;
+
+		if(!CheckRadioButton->Checked) {
+			inFileName = outFileName;
+		}
 	}
 
 	if(OpenDialog->Files->Count > 1) {

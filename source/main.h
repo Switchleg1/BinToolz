@@ -37,7 +37,10 @@ __published:	// IDE-managed Components
 	TRadioButton *CheckRadioButton;
 	TRadioButton *ImportRadioButton;
 	TRadioButton *ExportRadioButton;
-	TCheckBox *IgnoreCheckBox;
+	TGroupBox *GroupBox4;
+	TRadioButton *NormalRadioButton;
+	TRadioButton *IgnoreRadioButton;
+	TRadioButton *ForceRadioButton;
 	void __fastcall ConvertButtonClick(TObject *Sender);
 	void __fastcall PatchButtonClick(TObject *Sender);
 	void __fastcall CALButtonClick(TObject *Sender);
