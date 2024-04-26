@@ -5500,7 +5500,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS uniqueid="0x0" id="z">
-      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f0a8" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedtypeflags="0x06" mmedaddress="0x7f0a8" mmedelementsizebits="16" mmedcolcount="20" mmedrowcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <indexcount>20</indexcount>
       <min>0</min>
       <max>1023.97</max>
