@@ -8,3 +8,5 @@ For a means of flashing and logging please see:
 
 For anyone interested in self tuning mqb vehicles:
   - email me at switchleg1@gmail.com
+
+Trent Smith @ BDT does not have permission to use any of the patches on this repo.
