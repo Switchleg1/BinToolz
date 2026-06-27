@@ -1,0 +1,19 @@
+# Python bytecode cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyInstaller
+*.spec
+build/
+dist/
+
+# IDE
+.vs/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db

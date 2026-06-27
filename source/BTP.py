@@ -260,9 +260,10 @@ class BTP:
 				if originalBin.data[i] == modifiedBin.data[i]:
 					n = 0
 					foundNext = False
-					while n < BTP_GAP_FILL:
-						if originalBin.data[i + n] != modifiedBin.data[i + n]:
-							foundNext = True
+					while n < BTP_GAP_FILL and foundNext == False:
+						if i + n < inSize:
+							if originalBin.data[i + n] != modifiedBin.data[i + n]:
+								foundNext = True
 
 						n += 1
 
@@ -274,20 +275,13 @@ class BTP:
 						self.data += originalBin.data[blockOffset : blockOffset + blockLength]
 						self.data += modifiedBin.data[blockOffset : blockOffset + blockLength]
 						blockCount += 1
-
-						#print("Adding block [" + str(blockCount) + "] Size [" + hex(blockLength) + "] Offset [" + hex(blockOffset) + "]")
-
-						hexSize = 16
-						if hexSize > blockLength:
-							hexSize = blockLength
-
 						blockOffset = -1
+						#print("Adding block [" + str(blockCount) + "] Size [" + hex(blockLength) + "] Offset [" + hex(blockOffset) + "]")		
 
 			else:
 				if originalBin.data[i] != modifiedBin.data[i]:
 					blockOffset = i
 
-		
 		self.__readHeader()
 		self.checkChecksum()
 		header = PatchHeaderType(BTP_VERSION, originalBin.softwareCode(), blockCount, self.checksum, inSize)
