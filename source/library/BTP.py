@@ -75,7 +75,7 @@ class BTP:
 	def __init__(self):
 		self.data = None
 		self.header = None
-		self.checkSum = 0
+		self.checksum = 0
 
 
 	def __readHeader(self):
@@ -93,7 +93,7 @@ class BTP:
 	def copy(self, btp):
 		self.data = btp.data
 		self.header = btp.header
-		self.checkSum = btp.checksum
+		self.checksum = btp.checksum
 
 
 	def load(self, fileName):
@@ -152,10 +152,10 @@ class BTP:
 
 				ch = ch >> 1
 
-		self.checksum = ~(crc & 0xFFFFFFFF)
+		self.checksum = (~crc) & 0xFFFFFFFF
 
 		if self.header.blockChecksum != self.checksum:
-			ReturnType.INVALID_CHECKSUM
+			return ReturnType.INVALID_CHECKSUM
 
 		return ReturnType.OK
 
