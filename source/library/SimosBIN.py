@@ -18,6 +18,21 @@ class SimosHardware:
         self.ghidraSize			= ghidraSize
         self.blocks				= blocks
 
+    # a hardware type may accept more than one full-bin size (e.g. Simos19 with
+    # or without the BOOT_BU block), so binSize may be an int or a list
+    def binSizeList(self):
+        return self.binSize if isinstance(self.binSize, (list, tuple)) else [self.binSize]
+
+
+    # the calibration block is always the last block in the list
+    def calBlock(self):
+        return self.blocks[-1]
+
+
+    def calBlockIndex(self):
+        return len(self.blocks) - 1
+
+
 simosHW = {
     "Simos 18.1": SimosHardware(
         0x00200060,
@@ -79,6 +94,22 @@ simosHW = {
 			SimosBlock(0x0,			0x30000,		0x020000)
 		]
 	),
+	"Simos 19": SimosHardware(
+		0x00700500,
+		0x0070050B,
+		0x00700366,
+		0x00700369,
+		[0x800000, 0x8FFF00],
+		0x0,
+		[
+			SimosBlock(0x0,			0x00800000,		0x000FFFF0),
+			SimosBlock(0x0,			0x00080000,		0x00180000),
+			SimosBlock(0x0,			0x00200000,		0x00200000),
+			SimosBlock(0x0,			0x00400000,		0x00200000),
+			SimosBlock(0x0,			0x00600000,		0x00100000),
+			SimosBlock(0x0,			0x00700000,		0x00100000)
+		]
+	),
 }
 
 class SimosBIN:
@@ -115,7 +146,7 @@ class SimosBIN:
 		return ReturnType.OK
 
 	def swapBlock(self, bin, block):
-		if isinstance(block, int) == False or block > 4 or isinstance(bin, SimosBIN) == False:
+		if isinstance(block, int) == False or block < 0 or isinstance(bin, SimosBIN) == False:
 			return ReturnType.INVALID_PARAM
 
 		if self.data is None or bin.data is None:
@@ -126,11 +157,22 @@ class SimosBIN:
 		if hwValue is None or hwKey != binKey:
 			return ReturnType.UNKNOWN_HW
 
+		if block >= len(hwValue.blocks):
+			return ReturnType.INVALID_PARAM
+
 		self.data = self.data[ : hwValue.blocks[block].binPosition] + \
 					bin.data[hwValue.blocks[block].binPosition : hwValue.blocks[block].binPosition + hwValue.blocks[block].length] + \
 					self.data[hwValue.blocks[block].binPosition + hwValue.blocks[block].length : ]
 		
 		return ReturnType.OK
+
+
+	def calBlockIndex(self):
+		key, hw = self.hardwareType()
+		if hw is None:
+			return -1
+
+		return hw.calBlockIndex()
 
 
 	def load(self, fileName):
@@ -182,14 +224,14 @@ class SimosBIN:
 
 		for key, value in simosHW.items():
 			data_size = len(self.data)
-			if data_size == value.binSize:
+			if data_size in value.binSizeList():
 				box_code = self.data[value.boxCodeStart : value.boxCodeStart + 11].strip()
 
 				if box_code[0] != 0x00:
 					return key, value
 
-			elif data_size == value.blocks[4].length:
-				box_code_pos = value.boxCodeStart - value.blocks[4].binPosition
+			elif data_size == value.calBlock().length:
+				box_code_pos = value.boxCodeStart - value.calBlock().binPosition
 				box_code = self.data[box_code_pos : box_code_pos + 11].strip()
 
 				if box_code[0] != 0x00:
@@ -205,8 +247,8 @@ class SimosBIN:
 		key, hw = self.hardwareType()
 		if hw is not None:
 			offset = 0
-			if len(self.data) == hw.blocks[4].length:
-				offset = hw.blocks[4].binPosition
+			if len(self.data) == hw.calBlock().length:
+				offset = hw.calBlock().binPosition
 
 			box_code_pos = hw.boxCodeStart - offset
 			return self.data[box_code_pos : box_code_pos + 11].decode("latin1")
@@ -216,7 +258,7 @@ class SimosBIN:
 
 	def softwareCode(self):
 		key, hw = self.hardwareType()
-		if hw is not None and len(self.data) == hw.binSize:
+		if hw is not None and len(self.data) in hw.binSizeList():
 			return self.data[hw.softCodeStart : hw.softCodeEnd].decode("latin1")
 
 		return None

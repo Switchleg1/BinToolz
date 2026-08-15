@@ -65,7 +65,7 @@ def calImport(fullFileName, calFileName, outputFileName, matchBoxCode, log):
     log("Output BIN [" + outputFileName + "]")
     outputBin = SimosBIN()
     outputBin.copy(fullBin)
-    ret = outputBin.swapBlock(calBin, 4)
+    ret = outputBin.swapBlock(calBin, outputBin.calBlockIndex())
     if ret != ReturnType.OK:
         log("Error importing cal [" + ret.string() + "]")
         return ret
@@ -97,7 +97,7 @@ def calExport(fullFileName, outputFileName, log):
 
     log("Output BIN [" + outputFileName + "]")
     outputBin = SimosBIN()
-    ret = outputBin.copy(fullBin, 4)
+    ret = outputBin.copy(fullBin, fullBin.calBlockIndex())
     if ret != ReturnType.OK:
         log("Error exporting cal [" + ret.string() + "]")
         return ret

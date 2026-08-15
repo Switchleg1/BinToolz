@@ -181,7 +181,7 @@ class BTP:
 
 				for d in range(blockHeader.length):
 					if bin.data[blockHeader.offset + d] != currentData[d]:
-						if blockHeader.offset + d >= hwValue.blocks[4].binPosition and blockHeader.offset + d <= hwValue.blocks[4].binPosition + hwValue.blocks[4].length:
+						if blockHeader.offset + d >= hwValue.calBlock().binPosition and blockHeader.offset + d <= hwValue.calBlock().binPosition + hwValue.calBlock().length:
 							modifiedCal = True
 						else:
 							modifiedASW = True
@@ -222,7 +222,7 @@ class BTP:
 				currentData = currentData[blockHeader.length:]
 
 			#check for if we are in cal block and only modify if flag is set
-			if doCalBlock or (blockHeader.offset >= hwValue.blocks[4].binPosition and blockHeader.offset + blockHeader.length <= hwValue.blocks[4].binPosition + hwValue.blocks[4].length) == False:
+			if doCalBlock or (blockHeader.offset >= hwValue.calBlock().binPosition and blockHeader.offset + blockHeader.length <= hwValue.calBlock().binPosition + hwValue.calBlock().length) == False:
 				for d in range(blockHeader.length):
 					binData[blockHeader.offset + d] = currentData[d]
 				
